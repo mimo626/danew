@@ -7,7 +7,6 @@ import 'package:danew/core/widgets/scrollable_tab_widget.dart';
 import 'package:danew/features/news/presentation/pages/home_recommend_tab_view.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/theme/text_styles.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

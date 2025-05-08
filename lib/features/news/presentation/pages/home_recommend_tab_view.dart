@@ -1,5 +1,4 @@
 import 'package:danew/core/globals/globals.dart';
-import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/features/news/presentation/widgets/news_flash_container.dart';
 import 'package:danew/features/news/presentation/widgets/news_img_card.dart';
