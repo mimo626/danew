@@ -6,11 +6,13 @@ import '../theme/text_styles.dart';
 class ScrollableTabWidget extends StatefulWidget {
   final List<String> tabTitles;
   final List<Widget> tabViews;
+  final isScrollable;
 
   const ScrollableTabWidget({
     super.key,
     required this.tabTitles,
     required this.tabViews,
+    required this.isScrollable,
   }) : assert(tabTitles.length == tabViews.length, '탭 제목과 내용의 길이가 일치해야 합니다.');
 
   @override
@@ -37,25 +39,27 @@ class _ScrollableTabWidgetState extends State<ScrollableTabWidget> with TickerPr
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TabBar(
-          controller: _tabController,
-          onTap:  (value) {
-            setState(() {
-              selectedIndex = value;
-            });
-          },
-          isScrollable: true,
-          tabs: widget.tabTitles.map((title) => Tab(text: title)).toList(),
-          labelColor: AppColors.blackColor,
-          labelStyle: AppTextStyles.medium15,
-          indicatorSize: TabBarIndicatorSize.tab,
-          indicatorColor: AppColors.blackColor,
-          unselectedLabelColor: AppColors.greyColor,
-          unselectedLabelStyle: AppTextStyles.medium15,
-          tabAlignment: TabAlignment.start,
-          //labelPadding: AppPadding.h16Padding,
-          //padding: AppPadding.h20Padding,
-          dividerColor: Colors.transparent,
+        DefaultTabController(
+          length: widget.tabTitles.length,
+          initialIndex: selectedIndex,
+          child: TabBar(
+            controller: _tabController,
+            onTap:  (value) {
+              setState(() {
+                selectedIndex = value;
+              });
+            },
+            isScrollable: widget.isScrollable,
+            tabs: widget.tabTitles.map((title) => Tab(text: title)).toList(),
+            labelColor: AppColors.blackColor,
+            labelStyle: AppTextStyles.medium15,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorColor: AppColors.blackColor,
+            unselectedLabelColor: AppColors.greyColor,
+            unselectedLabelStyle: AppTextStyles.medium15,
+            tabAlignment: widget.isScrollable ? TabAlignment.start :TabAlignment.fill,
+            dividerColor: Colors.transparent,
+          ),
         ),
         Expanded(
           child: TabBarView(
