@@ -1,8 +1,12 @@
+import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/custom_search_bar.dart';
+import 'package:danew/core/widgets/scrollable_tab_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../../../core/theme/text_styles.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -12,6 +16,20 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int selectedIndex = 0;
+  final tabViews = [
+    const Center(child: Text('추천')),
+    const Center(child: Text('인기')),
+    const Center(child: Text('정치')),
+    const Center(child: Text('경제')),
+    const Center(child: Text('엔터')),
+    const Center(child: Text('세계')),
+    const Center(child: Text('환경')),
+    const Center(child: Text('스포츠')),
+    const Center(child: Text('기술')),
+    const Center(child: Text('음식')),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,16 +38,21 @@ class _HomePageState extends State<HomePage> {
         showNotificationIcon: true,
       ),
       backgroundColor: AppColors.whiteColor,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Padding(
-              padding: AppPadding.h20v8Padding,
-              child: CustomSearchBar(),
+      body: Column(
+        children: [
+          // 검색바
+          Padding(
+            padding: AppPadding.h20v8Padding,
+            child: CustomSearchBar(),
+          ),
+          // 뉴스 카테고리 탭
+          Expanded(
+            child: ScrollableTabWidget(
+                tabTitles: Globals.homeTab,
+                tabViews: tabViews,
             ),
-
-          ],
-        ),
+          )
+        ],
       ),
     );
   }

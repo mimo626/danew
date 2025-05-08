@@ -5,8 +5,10 @@ import '../theme/colors.dart';
 import 'nav_item.dart';
 
 class Globals {
+  // BottomNavigationBarItem의 아이콘 사이즈
   static double navItemSize = 24;
 
+  // BottomNavigationBarItem들
   static List<NavItem> navItems = [
     NavItem(
       icon: Icon(
@@ -73,5 +75,11 @@ class Globals {
       ),
       label: "마이페이지",
     ),
+  ];
+
+  // 홈의 뉴스 카테고리 탭 위젯
+  static List<String> homeTab = [
+    "추천", "인기", "정치", "경제", "엔터", "세계", "환경", "스포츠",
+    "기술", "음식"
   ];
 }
