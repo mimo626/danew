@@ -16,7 +16,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  int selectedIndex = 0;
   final tabViews = [
     const Center(child: Text('추천')),
     const Center(child: Text('인기')),
@@ -50,6 +49,7 @@ class _HomePageState extends State<HomePage> {
             child: ScrollableTabWidget(
                 tabTitles: Globals.homeTab,
                 tabViews: tabViews,
+              isScrollable: true,
             ),
           )
         ],
