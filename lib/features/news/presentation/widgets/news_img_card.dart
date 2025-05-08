@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 
-import '../theme/sizedbox.dart';
-import '../theme/text_styles.dart';
+import '../../../../core/theme/sizedbox.dart';
+import '../../../../core/theme/text_styles.dart';
 
 class NewsImgCard extends StatefulWidget {
   final String imgRoute;
   final String newsTitle;
-  const NewsImgCard({super.key, required this.imgRoute, required this.newsTitle});
+  final VoidCallback onTap;
+  const NewsImgCard({super.key, required this.imgRoute, required this.newsTitle, required this.onTap});
 
   @override
   State<NewsImgCard> createState() => _NewsImgCardState();
@@ -17,7 +18,7 @@ class _NewsImgCardState extends State<NewsImgCard> {
   Widget build(BuildContext context) {
     return Expanded(
       child: InkWell(
-        onTap: () {},
+        onTap: widget.onTap,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
