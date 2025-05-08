@@ -1,5 +1,7 @@
 import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/theme/colors.dart';
+import 'package:danew/features/news/presentation/pages/home_page.dart';
+import 'package:danew/features/search/presentation/pages/search_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -60,8 +62,8 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
         physics: const NeverScrollableScrollPhysics(),
         controller: _tabController,
         children: const [
-          Center(child: Text('홈')),
-          Center(child: Text('검색')),
+          HomePage(),
+          SearchPage(),
           Center(child: Text('기록')),
           Center(child: Text('북마크')),
           Center(child: Text('마이페이지')),
