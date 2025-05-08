@@ -139,7 +139,7 @@ class CommonAppBarState extends State<PrimaryAppbar> {
       });
       return Text(
         widget.title!,
-        style: AppTextStyles.semiBold24,
+        style: AppTextStyles.semiBold18,
         textAlign: TextAlign.center,
       );
     }
