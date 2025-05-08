@@ -96,11 +96,12 @@ class Globals {
     "원달러 환율 급등…1,400원 돌파하며 금융시장 흔들",
   ];
 
+  static int titleNewsDataLength = 3;
+
   static List<NewsImgCard> newsImgCardData = [
     NewsImgCard(imgRoute: "lib/core/images/img.png", newsTitle: "대형마트 의무휴업 폐지 논의 본격화",),
     NewsImgCard(imgRoute: "lib/core/images/img_1.png", newsTitle: "청년층 주거 대책 발표…월세 지원 확대 예정",)
   ];
-  // "AI 챗봇, 병원 예약·진료 안내 서비스에 도입",
   // "국제유가 급등…휘발유 가격 1,800원 돌파",
   // "드라마 ‘시간의 끝에서’ 넷플릭스 글로벌 1위 등극",
   // "전기차 보조금 개편…국산차 중심으로 재편",
