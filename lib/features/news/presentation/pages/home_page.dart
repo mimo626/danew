@@ -4,6 +4,7 @@ import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/custom_search_bar.dart';
 import 'package:danew/core/widgets/scrollable_tab_widget.dart';
+import 'package:danew/features/news/presentation/pages/home_recommend_tab_view.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/text_styles.dart';
@@ -17,7 +18,7 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final tabViews = [
-    const Center(child: Text('추천')),
+    HomeRecommendTabView(),
     const Center(child: Text('인기')),
     const Center(child: Text('정치')),
     const Center(child: Text('경제')),
@@ -51,7 +52,7 @@ class _HomePageState extends State<HomePage> {
                 tabViews: tabViews,
               isScrollable: true,
             ),
-          )
+          ),
         ],
       ),
     );
