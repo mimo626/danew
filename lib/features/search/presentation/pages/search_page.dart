@@ -1,10 +1,12 @@
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/widgets/app_bar/search_app_bar.dart';
-import 'package:danew/features/search/presentation/widgets/recent_search_word_list.dart';
+import 'package:danew/features/search/presentation/widgets/recent_search_word_widget.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/globals/globals.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
+import '../../../../core/widgets/list_view_widget.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -35,7 +37,11 @@ class _SearchPageState extends State<SearchPage> {
                 ],
               ),
             ),
-            RecentSearchWordList(),
+            ListViewWidget(
+              list: Globals.recentSearchWordData,
+              listLength: Globals.recentSearchWordData.length,
+              listWidgetBuilder: (item) => RecentSearchWordWidget(item: item),
+            ),
           ],
         ),
       ),
