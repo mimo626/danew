@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
+import '../widgets/my_profile_widget.dart';
 
 class MyPage extends StatefulWidget {
   const MyPage({super.key});
@@ -25,35 +26,7 @@ class _MyPageState extends State<MyPage> {
       ),
       body: Column(
         children: [
-          Padding(
-            padding: AppPadding.h20v16Padding,
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Row(
-                  children: [
-                    CircleAvatar(
-                      backgroundColor: AppColors.secondaryColor,
-                      radius: 28,
-                      child: SvgPicture.asset("lib/core/icons/user.svg"),
-                    ),
-                    AppSizedBox.w8SizedBox,
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text("danew@naver.com"),
-                        AppSizedBox.h8SizedBox,
-                        Text("강민주"),
-                      ],
-                    )
-                  ],
-                ),
-                InkWell(
-                    child: SvgPicture.asset("lib/core/icons/pencil.svg")
-                ),
-              ],
-            ),
-          ),
+          MyProfileWidget(),
           Divider(
             color: AppColors.lightGreyColor,
             thickness: 10,
