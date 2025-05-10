@@ -3,6 +3,7 @@ import 'package:danew/core/theme/colors.dart';
 import 'package:danew/features/bookmark/presentation/pages/bookmark_page.dart';
 import 'package:danew/features/news/presentation/pages/home_page.dart';
 import 'package:danew/features/search/presentation/pages/search_page.dart';
+import 'package:danew/features/user_management/presentation/pages/my_page.dart';
 import 'package:flutter/material.dart';
 
 class MainPage extends StatefulWidget {
@@ -67,7 +68,7 @@ class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
           SearchPage(),
           Center(child: Text('기록')),
           BookmarkPage(),
-          Center(child: Text('마이페이지')),
+          MyPage(),
         ],
       ),
     );
