@@ -1,0 +1,63 @@
+import 'package:danew/core/widgets/list_view_widget.dart';
+import 'package:flutter/material.dart';
+
+import '../../../../core/globals/globals.dart';
+import '../../../../core/globals/news_img_card.dart';
+import '../../../../core/theme/colors.dart';
+import '../../../../core/theme/padding.dart';
+import '../../../../core/theme/text_styles.dart';
+
+class NewsSmallImgCardWidget extends StatelessWidget {
+  const NewsSmallImgCardWidget({
+    super.key,
+    required this.item,
+  });
+
+  final NewsSmallImgCard item;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: AppPadding.bottom16Padding,
+      child: InkWell(
+        onTap: () {},
+        child: Container(
+          height: 60,
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Expanded(
+                flex: 4,
+                child: Padding(
+                  padding: AppPadding.right16Padding,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(item.newsTitle, style: AppTextStyles.medium14,
+                      maxLines: 2,),
+                      SizedBox(),
+                      Text(item.time, style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor),),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                flex: 1,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(4),
+                  child: Image.asset(
+                    item.imgRoute,
+                    fit: BoxFit.cover,
+                    height: 60,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
