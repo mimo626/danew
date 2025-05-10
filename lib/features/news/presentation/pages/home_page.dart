@@ -3,7 +3,7 @@ import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/custom_search_bar.dart';
-import 'package:danew/core/widgets/scrollable_tab_widget.dart';
+import 'package:danew/core/widgets/tab_widget.dart';
 import 'package:danew/features/news/presentation/pages/home_recommend_tab_view.dart';
 import 'package:flutter/material.dart';
 
@@ -46,7 +46,7 @@ class _HomePageState extends State<HomePage> {
           ),
           // 뉴스 카테고리 탭
           Expanded(
-            child: ScrollableTabWidget(
+            child: TabWidget(
                 tabTitles: Globals.homeTab,
                 tabViews: tabViews,
               isScrollable: true,
