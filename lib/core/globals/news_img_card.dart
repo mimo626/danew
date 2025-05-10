@@ -1,19 +1,19 @@
-class NewsImgCard {
+class NewsBigImgCard {
   final String imgRoute;
   final String newsTitle;
 
-  NewsImgCard({
+  NewsBigImgCard({
     required this.imgRoute,
     required this.newsTitle
   });
 }
 
-class NewsImgCardColumn {
+class NewsSmallImgCard {
   final String imgRoute;
   final String newsTitle;
   final String time;
 
-  NewsImgCardColumn({
+  NewsSmallImgCard({
     required this.imgRoute,
     required this.newsTitle,
     required this.time,

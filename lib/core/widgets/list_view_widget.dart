@@ -4,8 +4,12 @@ import '../theme/padding.dart';
 
 class ListViewWidget extends StatefulWidget {
   final List<dynamic> list;
+  final int listLength;
   final Widget Function(dynamic item) listWidgetBuilder;
-  const ListViewWidget({super.key, required this.list, required this.listWidgetBuilder});
+  const ListViewWidget({super.key,
+    required this.list,
+    required this.listLength,
+    required this.listWidgetBuilder});
 
   @override
   State<ListViewWidget> createState() => _ListViewWidgetState();
@@ -18,7 +22,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
       padding: AppPadding.h20Padding,
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: widget.list.length,
+        itemCount: widget.listLength,
         itemBuilder: (context, index) {
           final item = widget.list[index];
           return widget.listWidgetBuilder(item);

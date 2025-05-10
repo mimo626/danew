@@ -3,17 +3,17 @@ import 'package:flutter/material.dart';
 import '../../../../core/theme/sizedbox.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class NewsImgCard extends StatefulWidget {
+class NewsBigImgCardWidget extends StatefulWidget {
   final String imgRoute;
   final String newsTitle;
   final VoidCallback onTap;
-  const NewsImgCard({super.key, required this.imgRoute, required this.newsTitle, required this.onTap});
+  const NewsBigImgCardWidget({super.key, required this.imgRoute, required this.newsTitle, required this.onTap});
 
   @override
-  State<NewsImgCard> createState() => _NewsImgCardState();
+  State<NewsBigImgCardWidget> createState() => _NewsBigImgCardWidgetState();
 }
 
-class _NewsImgCardState extends State<NewsImgCard> {
+class _NewsBigImgCardWidgetState extends State<NewsBigImgCardWidget> {
   @override
   Widget build(BuildContext context) {
     return Expanded(

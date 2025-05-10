@@ -1,13 +1,14 @@
 import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/theme/sizedbox.dart';
-import 'package:danew/features/news/presentation/widgets/news_flash_container.dart';
-import 'package:danew/features/news/presentation/widgets/news_img_card.dart';
-import 'package:danew/features/news/presentation/widgets/news_img_card_list.dart';
+import 'package:danew/features/news/presentation/widgets/news_flash_container_widget.dart';
+import 'package:danew/features/news/presentation/widgets/news_big_img_card_widget.dart';
+import 'package:danew/features/news/presentation/widgets/news_small_img_card_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
-import '../widgets/news_title_list.dart';
+import '../../../../core/widgets/list_view_widget.dart';
+import 'news_title_widget.dart';
 
 class HomeRecommendTabView extends StatefulWidget {
   const HomeRecommendTabView({super.key});
@@ -30,7 +31,11 @@ class _HomeRecommendTabViewState extends State<HomeRecommendTabView> {
             child: Text("민주님을 위한 추천 뉴스", style: AppTextStyles.semiBold18,),
           ),
           // 뉴스 제목 리스트
-          NewsTitleList(newsList: Globals.titleNewsData,),
+          ListViewWidget(
+            list: Globals.newsTitleData,
+            listLength: Globals.NewsTItleDataLength,
+            listWidgetBuilder: (item) => NewsTitleWidget(item: item),
+          ),
           // 뉴스 이미지 카드
           Padding(
             padding: AppPadding.h20v12Padding,
@@ -38,15 +43,15 @@ class _HomeRecommendTabViewState extends State<HomeRecommendTabView> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  NewsImgCard(
-                      imgRoute: Globals.newsImgCardData[0].imgRoute,
-                      newsTitle: Globals.newsImgCardData[0].newsTitle,
+                  NewsBigImgCardWidget(
+                      imgRoute: Globals.newsBigImgCardData[0].imgRoute,
+                      newsTitle: Globals.newsBigImgCardData[0].newsTitle,
                     onTap: () {},
                   ),
                   AppSizedBox.w16SizedBox,
-                  NewsImgCard(
-                      imgRoute: Globals.newsImgCardData[1].imgRoute,
-                      newsTitle: Globals.newsImgCardData[1].newsTitle,
+                  NewsBigImgCardWidget(
+                      imgRoute: Globals.newsBigImgCardData[1].imgRoute,
+                      newsTitle: Globals.newsBigImgCardData[1].newsTitle,
                     onTap: () {},
                   ),
                 ],
@@ -58,7 +63,11 @@ class _HomeRecommendTabViewState extends State<HomeRecommendTabView> {
             child: Text("실시간 맞춤 뉴스", style: AppTextStyles.semiBold18,),
           ),
           // 뉴스 이미지 카드 리스트
-          NewsImgCardList(newsList: Globals.newsImgCardColumnData,)
+          ListViewWidget(
+              list: Globals.newsSmallImgCardData,
+              listLength: Globals.newsSmallImgCardDataLength,
+              listWidgetBuilder: (item) => NewsSmallImgCardWidget(item: item)
+          ),
         ],
       ),
     );
