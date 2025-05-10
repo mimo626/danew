@@ -20,24 +20,22 @@ class _NewsTitleListState extends State<NewsTitleList> {
   Widget build(BuildContext context) {
     return Padding(
       padding: AppPadding.h20Padding,
-      child: Expanded(
-        child: ListView.builder(
-          shrinkWrap: true,
-          itemCount: Globals.titleNewsDataLength,
-          itemBuilder: (context, index) {
-            final newsIndex = widget.newsList[index];
-            return Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                InkWell(
-                    onTap: () {},
-                    child: Text(newsIndex, style: AppTextStyles.medium14,)
-                ),
-                Divider(color: AppColors.lightGreyColor,)
-              ],
-            );
-          },
-        ),
+      child: ListView.builder(
+        shrinkWrap: true,
+        itemCount: Globals.titleNewsDataLength,
+        itemBuilder: (context, index) {
+          final newsIndex = widget.newsList[index];
+          return Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              InkWell(
+                  onTap: () {},
+                  child: Text(newsIndex, style: AppTextStyles.medium14,)
+              ),
+              Divider(color: AppColors.lightGreyColor,)
+            ],
+          );
+        },
       ),
     );
   }
