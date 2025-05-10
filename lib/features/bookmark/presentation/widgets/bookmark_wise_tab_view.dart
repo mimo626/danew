@@ -20,8 +20,8 @@ class _BookmarkWiseTabViewState extends State<BookmarkWiseTabView> {
         children: [
           AppSizedBox.h16SizedBox,
           ListViewWidget(
-            list: Globals.newsSmallImgCardData,
-            listLength: Globals.newsSmallImgCardDataLength,
+            list: Globals.wiseCardData,
+            listLength: Globals.wiseCardData.length,
             listWidgetBuilder: (item) => WiseCardWidget(item: item),
           ),
         ],
