@@ -1,4 +1,5 @@
 import 'package:danew/core/globals/news_img_card.dart';
+import 'package:danew/core/globals/wise_card.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -126,12 +127,16 @@ class Globals {
     "검색어8",
     "검색어9",
     "검색어10",
-    "검색어10",
-    "검색어10",
-    "검색어10",
-    "검색어10",
-    "검색어10",
-    "검색어10",
+  ];
+
+  static List<WiseCard> wiseCardData = [
+    WiseCard(content: "행동이 모든 성공의 기본이다.", author: "파블로 피카소"),
+    WiseCard(content: "오늘 할 수 있는 일을 내일로 미루지 마라.", author: "벤저민 프랭클린"),
+    WiseCard(content: "성공은 준비와 기회의 만남이다.", author: "세네카"),
+    WiseCard(content: "할 수 있다고 믿든, 없다고 믿든, 당신 말이 맞다.", author: "헨리 포드"),
+    WiseCard(content: "자신을 이기는 것이 가장 위대한 승리다.", author: "플라톤"),
+    WiseCard(content: "성공하려면 실패를 두려워하지 마라.", author: "빌 게이츠"),
+    WiseCard(content: "지금 이 순간에 충실하라.", author: "틱낫한"),
   ];
 
 // "고령화 사회 진입…노년층 복지정책 강화 시급",
