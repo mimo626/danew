@@ -25,8 +25,16 @@ class WiseCardWidget extends StatelessWidget {
       child: Container(
         padding: AppPadding.all20Padding,
         decoration: BoxDecoration(
-          color: AppColors.lightGreyColor,
+          color: AppColors.whiteColor,
           borderRadius: BorderRadius.circular(8),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.blackColor.withOpacity(0.1), // 그림자 색과 투명도
+              spreadRadius: 1, // 그림자 확산 범위
+              blurRadius: 6, // 그림자 흐림 정도
+              offset: Offset(0, 3), // 그림자의 위치 (x, y)
+            ),
+          ],
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
