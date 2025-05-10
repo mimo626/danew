@@ -3,12 +3,12 @@ import 'package:flutter/material.dart';
 import '../theme/colors.dart';
 import '../theme/text_styles.dart';
 
-class ScrollableTabWidget extends StatefulWidget {
+class TabWidget extends StatefulWidget {
   final List<String> tabTitles;
   final List<Widget> tabViews;
   final isScrollable;
 
-  const ScrollableTabWidget({
+  const TabWidget({
     super.key,
     required this.tabTitles,
     required this.tabViews,
@@ -16,10 +16,10 @@ class ScrollableTabWidget extends StatefulWidget {
   }) : assert(tabTitles.length == tabViews.length, '탭 제목과 내용의 길이가 일치해야 합니다.');
 
   @override
-  State<ScrollableTabWidget> createState() => _ScrollableTabWidgetState();
+  State<TabWidget> createState() => _TabWidgetState();
 }
 
-class _ScrollableTabWidgetState extends State<ScrollableTabWidget> with TickerProviderStateMixin {
+class _TabWidgetState extends State<TabWidget> with TickerProviderStateMixin {
   late TabController _tabController;
   int selectedIndex = 0;
 
