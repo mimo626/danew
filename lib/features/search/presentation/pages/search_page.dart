@@ -1,9 +1,7 @@
 import 'package:danew/core/theme/colors.dart';
-import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/widgets/app_bar/search_app_bar.dart';
 import 'package:danew/features/search/presentation/widgets/recent_search_word_list.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';

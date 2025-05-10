@@ -57,6 +57,6 @@ class _RecentSearchWordListState extends State<RecentSearchWordList> {
           },
         ),
       ),
-    );;
+    );
   }
 }

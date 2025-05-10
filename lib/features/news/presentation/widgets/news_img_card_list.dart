@@ -1,4 +1,3 @@
-import 'package:danew/core/theme/sizedbox.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/globals/globals.dart';
