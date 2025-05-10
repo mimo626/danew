@@ -1,9 +1,6 @@
 import 'package:danew/core/theme/colors.dart';
-import 'package:danew/core/theme/padding.dart';
-import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/features/user_management/presentation/widgets/my_list_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 import '../widgets/my_profile_widget.dart';
