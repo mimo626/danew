@@ -1,4 +1,5 @@
 import 'package:danew/core/globals/news_img_card.dart';
+import 'package:danew/core/globals/wise_card.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/widgets/list_view_widget.dart';
@@ -10,7 +11,7 @@ import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
 class WiseCardWidget extends StatelessWidget {
-  final NewsSmallImgCard item;
+  final WiseCard item;
 
   const WiseCardWidget({
     super.key,
@@ -38,11 +39,11 @@ class WiseCardWidget extends StatelessWidget {
                 color: AppColors.primaryColor,
               ),
             ),
-            Text(item.newsTitle, style: AppTextStyles.medium14,),
+            Text(item.content, style: AppTextStyles.medium14,),
             AppSizedBox.h8SizedBox,
             Align(
                 alignment: Alignment.bottomRight,
-                child: Text(item.time, style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor),)),
+                child: Text(item.author, style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor),)),
           ],
         ),
       ),
