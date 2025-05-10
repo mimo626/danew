@@ -1,8 +1,8 @@
 import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/tab_widget.dart';
-import 'package:danew/features/bookmark/presentation/widgets/bookmark_news_tab.dart';
-import 'package:danew/features/bookmark/presentation/widgets/bookmark_wise_tab.dart';
+import 'package:danew/features/bookmark/presentation/widgets/bookmark_news_tab_view.dart';
+import 'package:danew/features/bookmark/presentation/widgets/bookmark_wise_tab_view.dart';
 import 'package:flutter/material.dart';
 
 class BookmarkPage extends StatefulWidget {
@@ -14,8 +14,8 @@ class BookmarkPage extends StatefulWidget {
 
 class _BookmarkPageState extends State<BookmarkPage> {
   final tabViews = [
-    BookmarkNewsTab(),
-    BookmarkWiseTab()
+    BookmarkNewsTabView(),
+    BookmarkWiseTabView()
   ];
 
   @override
