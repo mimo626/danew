@@ -1,12 +1,8 @@
-import 'package:danew/core/globals/news_img_card.dart';
 import 'package:danew/core/globals/wise_card.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
-import 'package:danew/core/widgets/list_view_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-
-import '../../../../core/globals/globals.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 

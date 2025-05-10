@@ -1,7 +1,5 @@
-import 'package:danew/core/widgets/list_view_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/globals/globals.dart';
 import '../../../../core/globals/news_img_card.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
