@@ -5,10 +5,10 @@ import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
 class NewsTitleList extends StatefulWidget {
-  final List<String> newList;
+  final List<String> newsList;
   const NewsTitleList({
     super.key,
-    required this.newList,
+    required this.newsList,
   });
 
   @override
@@ -25,7 +25,7 @@ class _NewsTitleListState extends State<NewsTitleList> {
           shrinkWrap: true,
           itemCount: Globals.titleNewsDataLength,
           itemBuilder: (context, index) {
-            final newsIndex = widget.newList[index];
+            final newsIndex = widget.newsList[index];
             return Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
