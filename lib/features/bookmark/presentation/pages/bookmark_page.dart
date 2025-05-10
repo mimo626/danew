@@ -1,6 +1,8 @@
 import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
-import 'package:danew/core/widgets/scrollable_tab_widget.dart';
+import 'package:danew/core/widgets/tab_widget.dart';
+import 'package:danew/features/bookmark/presentation/widgets/bookmark_news_tab.dart';
+import 'package:danew/features/bookmark/presentation/widgets/bookmark_wise_tab.dart';
 import 'package:flutter/material.dart';
 
 class BookmarkPage extends StatefulWidget {
@@ -12,8 +14,8 @@ class BookmarkPage extends StatefulWidget {
 
 class _BookmarkPageState extends State<BookmarkPage> {
   final tabViews = [
-    const Center(child: Text('뉴스')),
-    const Center(child: Text('명언')),
+    BookmarkNewsTab(),
+    BookmarkWiseTab()
   ];
 
   @override
@@ -26,7 +28,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
       body: Column(
         children: [
           Expanded(
-              child: ScrollableTabWidget(
+              child: TabWidget(
                   tabTitles: Globals.bookmarkTab,
                   tabViews: tabViews,
                 isScrollable: false,
