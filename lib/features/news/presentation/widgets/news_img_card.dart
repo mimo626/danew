@@ -23,7 +23,7 @@ class _NewsImgCardState extends State<NewsImgCard> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             ClipRRect(
-              borderRadius: BorderRadius.circular(16),
+              borderRadius: BorderRadius.circular(8),
               child: Image.asset(
                 widget.imgRoute,
                 fit: BoxFit.cover,
