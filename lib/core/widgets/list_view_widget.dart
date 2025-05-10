@@ -22,6 +22,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
       padding: AppPadding.h20Padding,
       child: ListView.builder(
         shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
         itemCount: widget.listLength,
         itemBuilder: (context, index) {
           final item = widget.list[index];
