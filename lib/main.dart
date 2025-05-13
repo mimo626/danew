@@ -1,10 +1,8 @@
-import 'package:danew/core/theme/colors.dart';
 import 'package:danew/features/login/presentation/pages/additional_user_info_page.dart';
 import 'package:danew/features/login/presentation/pages/login_page.dart';
 import 'package:danew/features/login/presentation/pages/terms_agree_page.dart';
 import 'package:danew/main_page.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:go_router/go_router.dart';
 
 

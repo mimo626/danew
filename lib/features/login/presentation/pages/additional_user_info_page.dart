@@ -2,7 +2,6 @@ import 'package:danew/core/globals/enum.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
-import 'package:danew/core/widgets/app_bar/search_app_bar.dart';
 import 'package:danew/core/widgets/button/basic_btn.dart';
 import 'package:danew/core/widgets/text_field_title.dart';
 import 'package:flutter/material.dart';
