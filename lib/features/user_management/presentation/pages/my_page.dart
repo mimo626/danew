@@ -16,6 +16,7 @@ class _MyPageState extends State<MyPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       appBar: PrimaryAppbar(
         title: "마이페이지",
         showNotificationIcon: true,

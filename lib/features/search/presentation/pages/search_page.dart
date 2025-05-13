@@ -19,6 +19,7 @@ class _SearchPageState extends State<SearchPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       appBar: SearchBarAppbar(),
       body: SingleChildScrollView(
         child: Column(

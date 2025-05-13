@@ -5,6 +5,8 @@ import 'package:danew/features/bookmark/presentation/widgets/bookmark_news_tab_v
 import 'package:danew/features/bookmark/presentation/widgets/bookmark_wise_tab_view.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/theme/colors.dart';
+
 class BookmarkPage extends StatefulWidget {
   const BookmarkPage({super.key});
 
@@ -21,6 +23,7 @@ class _BookmarkPageState extends State<BookmarkPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.whiteColor,
       appBar: PrimaryAppbar(
         title: "북마크",
         showNotificationIcon: true,
