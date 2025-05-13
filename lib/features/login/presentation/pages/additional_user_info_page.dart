@@ -1,3 +1,4 @@
+import 'package:danew/core/globals/enum.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
@@ -10,12 +11,18 @@ import 'package:go_router/go_router.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class AdditionalUserInfoPage extends StatelessWidget {
+class AdditionalUserInfoPage extends StatefulWidget {
   const AdditionalUserInfoPage({super.key});
 
   @override
+  State<AdditionalUserInfoPage> createState() => _AdditionalUserInfoPageState();
+}
+
+class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
+  @override
   Widget build(BuildContext context) {
     TextEditingController nameTextEditingController = TextEditingController();
+    Gender? _selectedGender;
 
     return Scaffold(
       backgroundColor: AppColors.whiteColor,
@@ -47,7 +54,33 @@ class AdditionalUserInfoPage extends StatelessWidget {
               keyboardType: TextInputType.number,
             ),
             AppSizedBox.h16SizedBox,
-
+            Text("성별", style: AppTextStyles.medium14,),
+            AppSizedBox.h16SizedBox,
+            RadioListTile<Gender>(
+              title: Text("남"),
+              value: Gender.man,
+              groupValue: _selectedGender,
+              activeColor: AppColors.primaryColor,
+              onChanged: (Gender? value) {
+                setState(() {
+                  print(value);
+                  _selectedGender = value!;
+                  print("선택된 성별: $_selectedGender");
+                });
+              },
+            ),
+            RadioListTile<Gender>(
+              title: Text("여"),
+              value: Gender.woman,
+              groupValue: _selectedGender,
+              activeColor: AppColors.primaryColor,
+              onChanged: (Gender? value) {
+                setState(() {
+                  _selectedGender = value!;
+                  print("선택된 성별: $_selectedGender");
+                });
+              },
+            ),
           ],
         ),
       ),
