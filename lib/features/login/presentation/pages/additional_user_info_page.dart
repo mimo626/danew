@@ -56,30 +56,36 @@ class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
             AppSizedBox.h16SizedBox,
             Text("성별", style: AppTextStyles.medium14,),
             AppSizedBox.h16SizedBox,
-            RadioListTile<Gender>(
-              title: Text("남"),
-              value: Gender.man,
-              groupValue: _selectedGender,
-              activeColor: AppColors.primaryColor,
-              onChanged: (Gender? value) {
-                setState(() {
-                  print(value);
-                  _selectedGender = value!;
-                  print("선택된 성별: $_selectedGender");
-                });
-              },
-            ),
-            RadioListTile<Gender>(
-              title: Text("여"),
-              value: Gender.woman,
-              groupValue: _selectedGender,
-              activeColor: AppColors.primaryColor,
-              onChanged: (Gender? value) {
-                setState(() {
-                  _selectedGender = value!;
-                  print("선택된 성별: $_selectedGender");
-                });
-              },
+            Column(
+              children: [
+                RadioListTile<Gender>(
+                  title: Text("남"),
+                  value: Gender.man,
+                  groupValue: _selectedGender,
+                  activeColor: AppColors.primaryColor,
+                  contentPadding: EdgeInsets.zero,
+                  onChanged: (Gender? value) {
+                    setState(() {
+                      print(value);
+                      _selectedGender = value!;
+                      print("선택된 성별: $_selectedGender");
+                    });
+                  },
+                ),
+                RadioListTile<Gender>(
+                  title: Text("여"),
+                  value: Gender.woman,
+                  groupValue: _selectedGender,
+                  activeColor: AppColors.primaryColor,
+                  contentPadding: EdgeInsets.zero,
+                  onChanged: (Gender? value) {
+                    setState(() {
+                      _selectedGender = value!;
+                      print("선택된 성별: $_selectedGender");
+                    });
+                  },
+                ),
+              ],
             ),
           ],
         ),
@@ -90,7 +96,7 @@ class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
             btnText: "다음",
             textColor: AppColors.whiteColor,
             backgroundColor: AppColors.primaryColor,
-            onPressed: () => context.push("/")
+            onPressed: () => context.push("/termsAgree")
         ),
       ),
     );
