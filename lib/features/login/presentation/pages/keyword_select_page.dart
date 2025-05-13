@@ -38,6 +38,10 @@ class _KeywordSelectPageState extends State<KeywordSelectPage> {
             Text("관심사 키워드 선택",
               style: AppTextStyles.semiBold24,
             ),
+            AppSizedBox.h8SizedBox,
+            Text("관심사 키워드를 토대로 맞춤형 뉴스를 제공합니다.",
+              style: AppTextStyles.regular14.copyWith(color: AppColors.greyColor),
+            ),
             AppSizedBox.h40SizedBox,
             Expanded(
               child: GridView.builder(
@@ -63,7 +67,7 @@ class _KeywordSelectPageState extends State<KeywordSelectPage> {
             btnText: "다음",
             textColor: AppColors.whiteColor,
             backgroundColor: AppColors.primaryColor,
-            onPressed: () => context.push("/")
+            onPressed: () => context.go("/")
         ),
       ),
     );
