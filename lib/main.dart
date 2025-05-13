@@ -1,4 +1,5 @@
 import 'package:danew/features/login/presentation/pages/additional_user_info_page.dart';
+import 'package:danew/features/login/presentation/pages/keyword_select_page.dart';
 import 'package:danew/features/login/presentation/pages/login_page.dart';
 import 'package:danew/features/login/presentation/pages/terms_agree_page.dart';
 import 'package:danew/main_page.dart';
@@ -30,6 +31,12 @@ final GoRouter _router = GoRouter(
       path: '/termsAgree',
       builder: (BuildContext context, GoRouterState state) {
         return const TermsAgreePage();
+      },
+    ),
+    GoRoute(
+      path: '/keywordSelect',
+      builder: (BuildContext context, GoRouterState state) {
+        return const KeywordSelectPage();
       },
     ),
     GoRoute(
