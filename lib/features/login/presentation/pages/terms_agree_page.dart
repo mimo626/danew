@@ -124,7 +124,7 @@ class _TermsAgreePageState extends State<TermsAgreePage> {
             btnText: "다음",
             textColor: AppColors.whiteColor,
             backgroundColor: AppColors.primaryColor,
-            onPressed: () => context.push("/")
+            onPressed: () => context.push("/keywordSelect")
         ),
       ),
     );
