@@ -1,5 +1,4 @@
 import 'package:danew/core/globals/globals.dart';
-import 'package:danew/core/widgets/list_view_widget.dart';
 import 'package:danew/features/login/presentation/widgets/keyword_btn_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
