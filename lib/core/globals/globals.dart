@@ -27,16 +27,16 @@ class Globals {
     ),
     NavItem(
       icon: Icon(
-        Icons.search_outlined,
+        Icons.wb_sunny_outlined,
         color: AppColors.primaryColor,
         size: Globals.navItemSize,
       ),
       activeIcon: Icon(
-        Icons.search,
+        Icons.wb_sunny,
         color: AppColors.primaryColor,
         size: Globals.navItemSize,
       ),
-      label: "검색",
+      label: "명언",
     ),
     NavItem(
       icon: Icon(
