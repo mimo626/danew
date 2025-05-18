@@ -1,6 +1,7 @@
 import 'package:danew/core/globals/wise_card.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
+import 'package:danew/core/widgets/button/bookmark_toggle_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../core/theme/padding.dart';
@@ -38,10 +39,7 @@ class WiseCardWidget extends StatelessWidget {
           children: [
             Align(
               alignment: Alignment.topRight,
-              child: SvgPicture.asset(
-                  "lib/core/icons/bookmark.svg",
-                color: AppColors.primaryColor,
-              ),
+              child: BookmarkToggleBtn()
             ),
             Text(item.content, style: AppTextStyles.medium14,),
             AppSizedBox.h8SizedBox,
