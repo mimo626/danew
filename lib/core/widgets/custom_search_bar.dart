@@ -1,3 +1,4 @@
+import 'package:danew/core/widgets/app_bar/search_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
