@@ -103,6 +103,13 @@ class Globals {
     NewsBigImgCard(imgRoute: "lib/core/images/img.png", newsTitle: "대형마트 의무휴업 폐지 논의 본격화",),
     NewsBigImgCard(imgRoute: "lib/core/images/img_1.png", newsTitle: "청년층 주거 대책 발표…월세 지원 확대 예정",)
   ];
+  static List<NewsBigImgCard> newsMediumImgCardData = [
+    NewsBigImgCard(imgRoute: "lib/core/images/img_9.png", newsTitle: "고령화 사회 진입…노년층 복지정책 강화 시급",),
+    NewsBigImgCard(imgRoute: "lib/core/images/img_10.png", newsTitle: "SNS 이용자 수 5천만 돌파…10대 이용률 급상승",),
+    NewsBigImgCard(imgRoute: "lib/core/images/img_11.png", newsTitle: "스마트폰 시장, 폴더블폰 점유율 20% 육박",),
+    NewsBigImgCard(imgRoute: "lib/core/images/img_12.png", newsTitle: "주 4일제 시범 도입 기업 증가…직원 만족도 상승",),
+    NewsBigImgCard(imgRoute: "lib/core/images/img_13.png", newsTitle: "해양 쓰레기 수거 드론 도입…환경 보호 박차",),
+  ];
 
   static List<NewsSmallImgCard> newsSmallImgCardData = [
     NewsSmallImgCard(imgRoute: "lib/core/images/img_2.png", newsTitle: "국제유가 급등…휘발유 가격 1,800원 돌파", time: "3시간 전"),
@@ -143,11 +150,7 @@ class Globals {
     "정치", "엔터", "경제", "취업", "문화", "IT", "세계", "AI", "사회",
     "스포츠", "금융", "주식"
   ];
-  // "고령화 사회 진입…노년층 복지정책 강화 시급",
-  // "SNS 이용자 수 5천만 돌파…10대 이용률 급상승",
-  // "스마트폰 시장, 폴더블폰 점유율 20% 육박",
-  // "주 4일제 시범 도입 기업 증가…직원 만족도 ‘상승’",
-  // "해양 쓰레기 수거 드론 도입…환경 보호 박차",
+
   // "세계적인 디자이너 A씨, 서울 패션위크 참여 확정",
   // "문화재청, 100년 전 기록 사진 공개…역사 재조명"
 }
