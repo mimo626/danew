@@ -2,6 +2,7 @@ import 'package:danew/features/login/presentation/pages/additional_user_info_pag
 import 'package:danew/features/login/presentation/pages/keyword_select_page.dart';
 import 'package:danew/features/login/presentation/pages/login_page.dart';
 import 'package:danew/features/login/presentation/pages/terms_agree_page.dart';
+import 'package:danew/features/search/presentation/pages/search_page.dart';
 import 'package:danew/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -37,6 +38,12 @@ final GoRouter _router = GoRouter(
       path: '/keywordSelect',
       builder: (BuildContext context, GoRouterState state) {
         return const KeywordSelectPage();
+      },
+    ),
+    GoRoute(
+      path: '/search',
+      builder: (BuildContext context, GoRouterState state) {
+        return const SearchPage();
       },
     ),
     GoRoute(
