@@ -5,6 +5,7 @@ import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/custom_search_bar.dart';
 import 'package:danew/core/widgets/tab_widget.dart';
 import 'package:danew/features/news/presentation/widgets/home_recommend_tab_view.dart';
+import 'package:danew/features/search/presentation/widgets/search_btn_widget.dart';
 import 'package:flutter/material.dart';
 
 
@@ -42,7 +43,7 @@ class _HomePageState extends State<HomePage> {
           // 검색바
           Padding(
             padding: AppPadding.h20v8Padding,
-            child: CustomSearchBar(),
+            child: SearchBtnWidget(),
           ),
           // 뉴스 카테고리 탭
           Expanded(
