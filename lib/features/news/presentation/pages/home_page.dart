@@ -2,7 +2,6 @@ import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
-import 'package:danew/core/widgets/custom_search_bar.dart';
 import 'package:danew/core/widgets/tab_widget.dart';
 import 'package:danew/features/news/presentation/widgets/home_recommend_tab_view.dart';
 import 'package:danew/features/search/presentation/widgets/search_btn_widget.dart';

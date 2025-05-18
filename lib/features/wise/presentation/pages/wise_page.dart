@@ -3,7 +3,6 @@ import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/theme/text_styles.dart';
 import 'package:danew/core/widgets/button/bookmark_toggle_btn.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../../../core/globals/globals.dart';
 import '../../../../core/theme/colors.dart';

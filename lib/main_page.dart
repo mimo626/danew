@@ -3,7 +3,6 @@ import 'package:danew/core/theme/colors.dart';
 import 'package:danew/features/bookmark/presentation/pages/bookmark_page.dart';
 import 'package:danew/features/diary/presentation/pages/diary_page.dart';
 import 'package:danew/features/news/presentation/pages/home_page.dart';
-import 'package:danew/features/search/presentation/pages/search_page.dart';
 import 'package:danew/features/user_management/presentation/pages/my_page.dart';
 import 'package:danew/features/wise/presentation/pages/wise_page.dart';
 import 'package:flutter/material.dart';
