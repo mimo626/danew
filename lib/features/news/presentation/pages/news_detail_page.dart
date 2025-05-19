@@ -31,6 +31,8 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
             Text(widget.newsData.newsTitle, style: AppTextStyles.medium18,),
             AppSizedBox.h12SizedBox,
             Text(widget.newsData.pubDate, style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor),),
+            AppSizedBox.h4SizedBox,
+            Text("${widget.newsData.creator} 기자", style: AppTextStyles.medium14),
             AppSizedBox.h16SizedBox,
             Row(
               children: [
