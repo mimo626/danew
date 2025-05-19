@@ -44,15 +44,11 @@ class _HomeRecommendTabViewState extends State<HomeRecommendTabView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   NewsBigImgCardWidget(
-                      imgRoute: Globals.newsBigImgCardData[0].imgRoute,
-                      newsTitle: Globals.newsBigImgCardData[0].newsTitle,
-                    onTap: () {},
+                      newsData: Globals.newsBigImgCardData[0],
                   ),
                   AppSizedBox.w16SizedBox,
                   NewsBigImgCardWidget(
-                      imgRoute: Globals.newsBigImgCardData[1].imgRoute,
-                      newsTitle: Globals.newsBigImgCardData[1].newsTitle,
-                    onTap: () {},
+                    newsData: Globals.newsBigImgCardData[1],
                   ),
                 ],
               ),
