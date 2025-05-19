@@ -28,6 +28,18 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            AppSizedBox.h16SizedBox,
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.tertiaryColor,
+                borderRadius: BorderRadius.circular(20)
+              ),
+              child: Padding(
+                padding: AppPadding.h12v6Padding,
+                child: Text(widget.newsData.category, style: AppTextStyles.medium14.copyWith(color: AppColors.primaryColor),),
+              ),
+            ),
+            AppSizedBox.h12SizedBox,
             Text(widget.newsData.newsTitle, style: AppTextStyles.medium18,),
             AppSizedBox.h12SizedBox,
             Text(widget.newsData.pubDate, style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor),),
@@ -43,7 +55,24 @@ class _NewsDetailPageState extends State<NewsDetailPage> {
               ],
             ),
             AppSizedBox.h16SizedBox,
-            Text("AI 뉴스 요약본", style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor),),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text("AI 뉴스 요약본", style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor),),
+                InkWell(
+                  onTap: () {
+
+                  },
+                  child: Text("뉴스 원문 보기", style: AppTextStyles.medium14.copyWith(
+                      color: AppColors.greyColor,
+                      decoration: TextDecoration.underline,
+                      decorationColor: AppColors.greyColor
+                    ),
+                  ),
+                )
+              ],
+            ),
+            AppSizedBox.h12SizedBox,
             Text(widget.newsData.newsContent, style: AppTextStyles.medium16,),
             AppSizedBox.h16SizedBox,
             Image.asset(
