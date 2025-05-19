@@ -1,6 +1,8 @@
+import 'package:danew/core/widgets/app_bar/search_app_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
-import '../../../../core/globals/news_img_card.dart';
+import '../../../../core/globals/news_data.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
@@ -11,14 +13,14 @@ class NewsSmallImgCardWidget extends StatelessWidget {
     required this.item,
   });
 
-  final NewsSmallImgCard item;
+  final NewsData item;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: AppPadding.bottom16Padding,
       child: InkWell(
-        onTap: () {},
+        onTap: () => context.push("/newsDetail", extra: {"newsData": item}),
         child: Container(
           height: 60,
           child: Row(
@@ -36,7 +38,7 @@ class NewsSmallImgCardWidget extends StatelessWidget {
                       Text(item.newsTitle, style: AppTextStyles.medium14,
                       maxLines: 2,),
                       SizedBox(),
-                      Text(item.time, style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor),),
+                      Text(item.pubDate, style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor),),
                     ],
                   ),
                 ),
@@ -46,7 +48,7 @@ class NewsSmallImgCardWidget extends StatelessWidget {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(4),
                   child: Image.asset(
-                    item.imgRoute,
+                    item.imgUrl,
                     fit: BoxFit.cover,
                     height: 60,
                   ),
