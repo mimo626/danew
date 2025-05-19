@@ -93,7 +93,7 @@ class Globals {
   // 타이틀만 있는 뉴스 더미데이터
   static List<NewsData> newsTitleData = [
     NewsData(
-        imgUrl: "lib/core/images/news_1.png",
+        imgUrl: "lib/core/images/img_14.png",
         newsTitle: "정부, 2025년까지 탄소배출 40% 감축 목표 발표",
         newsContent: "정부는 2025년까지 국가 온실가스 배출량을 40% 줄이겠다는 중장기 계획을 발표했다. "
             "이를 위해 산업, 수송, 에너지 부문에 대한 정책적 조정이 본격 추진될 예정이다. "
@@ -104,7 +104,7 @@ class Globals {
         link: "https://news.example.com/climate-reduction"
     ),
     NewsData(
-        imgUrl: "lib/core/images/news_2.png",
+        imgUrl: "lib/core/images/img_15.png",
         newsTitle: "국내 첫 자율주행 택시 상용화 시작…서울 시범 운행",
         newsContent: "국내 최초로 자율주행 택시가 서울에서 시범 운행을 시작하며 본격적인 상용화 단계에 진입했다. "
             "서울 시민들은 모바일 앱을 통해 자율주행 택시를 예약할 수 있으며, 초기에는 일부 구간에서만 운영된다. "
@@ -115,7 +115,7 @@ class Globals {
         link: "https://news.example.com/autonomous-taxi"
     ),
     NewsData(
-        imgUrl: "lib/core/images/news_3.png",
+        imgUrl: "lib/core/images/img_16.png",
         newsTitle: "원달러 환율 급등…1,400원 돌파하며 금융시장 흔들",
         newsContent: "원달러 환율이 1,400원을 돌파하며 국내 금융시장에 불안감이 확산되고 있다. "
             "전문가들은 미국의 금리 인상과 글로벌 경기 불안이 주요 원인이라고 분석한다. "
