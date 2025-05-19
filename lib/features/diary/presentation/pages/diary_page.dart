@@ -44,11 +44,7 @@ class _DiaryPageState extends State<DiaryPage> {
                   return Padding(
                     padding: AppPadding.right12Padding,
                     child: NewsMediumImgCardWidget(
-                      imgRoute: item.imgRoute,
-                      newsTitle: item.newsTitle,
-                      onTap: () {
-
-                      },
+                      newsData: item,
                     ),
                   );
                 },
