@@ -1,9 +1,11 @@
+import 'package:danew/features/alarm/presentation/pages/alarm_page.dart';
 import 'package:danew/features/login/presentation/pages/additional_user_info_page.dart';
 import 'package:danew/features/login/presentation/pages/keyword_select_page.dart';
 import 'package:danew/features/login/presentation/pages/login_page.dart';
 import 'package:danew/features/login/presentation/pages/terms_agree_page.dart';
 import 'package:danew/features/news/presentation/pages/news_detail_page.dart';
 import 'package:danew/features/search/presentation/pages/search_page.dart';
+import 'package:danew/features/user_management/presentation/pages/setting_page.dart';
 import 'package:danew/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -54,7 +56,24 @@ final GoRouter _router = GoRouter(
         return const SearchPage();
       },
     ),
-
+    GoRoute(
+      path: '/alarm',
+      builder: (BuildContext context, GoRouterState state) {
+        return const AlarmPage();
+      },
+    ),
+    GoRoute(
+      path: '/settings',
+      builder: (BuildContext context, GoRouterState state) {
+        return const SettingPage();
+      },
+    ),
+    GoRoute(
+      path: '/profileEdit',
+      builder: (BuildContext context, GoRouterState state) {
+        return const SettingPage();
+      },
+    ),
     GoRoute(
       path: '/',
       builder: (BuildContext context, GoRouterState state) {
