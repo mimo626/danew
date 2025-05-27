@@ -1,7 +1,9 @@
 
 import 'package:danew/core/theme/text_styles.dart';
+import 'package:danew/core/widgets/app_bar/search_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../theme/colors.dart';
 
@@ -11,9 +13,7 @@ class PrimaryAppbar extends StatefulWidget implements PreferredSizeWidget {
   final VoidCallback? leadingButtonPressed; // Leading 버튼 눌렸을 때 행동
   final String? title; // 제목
   final bool showNotificationIcon; // 알림 아이콘 유무
-  final VoidCallback? notificationButtonPressed; // 알림 아이콘 눌렀을 때 행동
   final bool showSettingIcon; // 설정 아이콘 유무
-  final VoidCallback? settingButtonPressed; // 설정 아이콘 눌렀을 때 행동
   final bool showLogo; // 어플 로고 유무
   final bool isDivider;
 
@@ -24,9 +24,7 @@ class PrimaryAppbar extends StatefulWidget implements PreferredSizeWidget {
     this.leadingButtonPressed,
     this.title,
     this.showNotificationIcon = false,
-    this.notificationButtonPressed,
     this.showSettingIcon = false,
-    this.settingButtonPressed,
     this.showLogo = false,
     this.isDivider = false,
   });
@@ -90,6 +88,7 @@ class CommonAppBarState extends State<PrimaryAppbar> {
                         height: 24,
                       ),
                       onPressed: () {
+                        context.push("/alarm");
                       },
                       padding: EdgeInsets.zero,
                     ),
@@ -116,7 +115,7 @@ class CommonAppBarState extends State<PrimaryAppbar> {
                       'lib/core/icons/setting.svg',
                     ),
                     onPressed: () {
-                      widget.settingButtonPressed!(); // 함수를 호출하기 위해 ()를 사용
+                      context.push("/settings");
                     },
                     padding: const EdgeInsets.all(0),
                   ),
