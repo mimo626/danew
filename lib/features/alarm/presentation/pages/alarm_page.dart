@@ -3,7 +3,6 @@ import 'package:danew/core/widgets/list_view_widget.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/colors.dart';
-import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 

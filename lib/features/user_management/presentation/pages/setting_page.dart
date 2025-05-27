@@ -2,8 +2,6 @@ import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/theme/text_styles.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-
 import '../../../../core/theme/colors.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 import '../widgets/setting_list_tile_widget.dart';
