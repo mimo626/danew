@@ -1,3 +1,4 @@
+import 'package:danew/core/theme/sizedbox.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -20,6 +21,8 @@ class _ProfileEditPageState extends State<ProfileEditPage> {
       ),
       body: Column(
         children: [
+          AppSizedBox.h16SizedBox,
+          
         ],
       ),
     );
