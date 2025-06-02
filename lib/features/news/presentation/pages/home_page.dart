@@ -32,7 +32,7 @@ class _HomePageState extends State<HomePage> {
   final apiService = NewsApiService();
 
   Future<void> newsTest() async {
-    final response = await apiService.fetchNews("정치", ["business"]);
+    await apiService.fetchNews("정치", ["business"]);
   }
   @override
   void initState() {
