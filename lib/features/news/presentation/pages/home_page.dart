@@ -3,6 +3,7 @@ import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/tab_widget.dart';
+import 'package:danew/features/news/data/datasources/news_api_service.dart';
 import 'package:danew/features/news/presentation/widgets/home_recommend_tab_view.dart';
 import 'package:danew/features/search/presentation/widgets/search_btn_widget.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,17 @@ class _HomePageState extends State<HomePage> {
     const Center(child: Text('기술')),
     const Center(child: Text('음식')),
   ];
+  final apiService = NewsApiService();
+
+  Future<void> newsTest() async {
+    final response = await apiService.fetchNews("정치", ["business"]);
+  }
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    newsTest();
+  }
 
   @override
   Widget build(BuildContext context) {
