@@ -1,4 +1,6 @@
- import 'package:flutter/material.dart';
+ import 'package:danew/features/news/data/model/news_model.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/globals/news_data.dart';
@@ -6,16 +8,16 @@ import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class NewsSmallImgCardWidget extends StatelessWidget {
+class NewsSmallImgCardWidget extends ConsumerWidget {
   const NewsSmallImgCardWidget({
     super.key,
     required this.item,
   });
 
-  final NewsData item;
+  final NewsModel item;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding: AppPadding.bottom16Padding,
       child: InkWell(
@@ -34,10 +36,10 @@ class NewsSmallImgCardWidget extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(item.newsTitle, style: AppTextStyles.medium14,
+                      Text(item.title!, style: AppTextStyles.medium14,
                       maxLines: 2,),
                       SizedBox(),
-                      Text(item.pubDate, style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor),),
+                      Text("${item.pub_date}", style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor),),
                     ],
                   ),
                 ),
@@ -46,8 +48,9 @@ class NewsSmallImgCardWidget extends StatelessWidget {
                 flex: 1,
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(4),
-                  child: Image.asset(
-                    item.imgUrl,
+                  //TODO 빈 이미지 채우기
+                  child: Image.network(
+                    item.image_url ?? "",
                     fit: BoxFit.cover,
                     height: 60,
                   ),
