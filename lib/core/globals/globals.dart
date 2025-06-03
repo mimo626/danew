@@ -80,7 +80,7 @@ class Globals {
   ];
 
   // 홈의 뉴스 카테고리 탭 위젯
-  static List<String> homeTab = [
+  static List<String> newsCategoryKr = [
     "추천", "인기", "정치", "경제", "범죄", "기술", "교육", "과학",
     "엔터", "환경", "스포츠", "세계", "건강", "일상", "국내", "관광", "음식", "기타"
   ];
