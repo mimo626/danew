@@ -4,6 +4,7 @@ import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/tab_widget.dart';
 import 'package:danew/features/news/data/datasources/news_api_service.dart';
+import 'package:danew/features/news/presentation/widgets/home_category_tab_view.dart';
 import 'package:danew/features/news/presentation/widgets/home_recommend_tab_view.dart';
 import 'package:danew/features/search/presentation/widgets/search_btn_widget.dart';
 import 'package:flutter/material.dart';
@@ -17,18 +18,13 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  final tabViews = [
-    HomeRecommendTabView(),
-    const Center(child: Text('인기')),
-    const Center(child: Text('정치')),
-    const Center(child: Text('경제')),
-    const Center(child: Text('엔터')),
-    const Center(child: Text('세계')),
-    const Center(child: Text('환경')),
-    const Center(child: Text('스포츠')),
-    const Center(child: Text('기술')),
-    const Center(child: Text('음식')),
-  ];
+  final tabViews = Globals.homeTab.map((category) {
+    if(category == "추천"){
+      return HomeRecommendTabView();
+    }else{
+      return HomeCategoryTabView(category: category);
+    }
+  },).toList();
   final apiService = NewsApiService();
 
   Future<void> newsTest() async {
