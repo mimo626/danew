@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class RecentSearchWordWidget extends StatelessWidget {
+class RecentSearchWordWidget extends ConsumerWidget {
   const RecentSearchWordWidget({
     super.key,
     required this.item,
@@ -13,7 +14,7 @@ class RecentSearchWordWidget extends StatelessWidget {
   final String item;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
