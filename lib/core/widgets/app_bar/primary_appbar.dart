@@ -1,12 +1,13 @@
 
 import 'package:danew/core/theme/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../theme/colors.dart';
 
-class PrimaryAppbar extends StatefulWidget implements PreferredSizeWidget {
+class PrimaryAppbar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   final bool isLeadingButtonExist; // Leading 버튼의 유무
   final String? leadingButtonIcon; // Leading 버튼의 아이콘
   final VoidCallback? leadingButtonPressed; // Leading 버튼 눌렸을 때 행동
@@ -36,7 +37,7 @@ class PrimaryAppbar extends StatefulWidget implements PreferredSizeWidget {
       const Size.fromHeight(56); // 일반 AppBar 높이
 }
 
-class CommonAppBarState extends State<PrimaryAppbar> {
+class CommonAppBarState extends ConsumerState<PrimaryAppbar> {
   double titleSpacing = 12.0;
   TextEditingController searchController = TextEditingController();
 
