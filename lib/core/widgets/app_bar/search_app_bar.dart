@@ -1,5 +1,6 @@
 import 'package:danew/core/widgets/custom_search_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:go_router/go_router.dart';
 
@@ -7,18 +8,17 @@ import '../../theme/colors.dart';
 import '../../theme/padding.dart';
 import '../../theme/sizedbox.dart';
 
-class SearchBarAppbar extends StatefulWidget implements PreferredSizeWidget {
+class SearchBarAppbar extends ConsumerStatefulWidget implements PreferredSizeWidget {
   const SearchBarAppbar({super.key});
 
   @override
-  State<SearchBarAppbar> createState() => _SearchBarAppbarState();
+  SearchBarAppbarState createState() => SearchBarAppbarState();
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(56.0);
 }
 
-class _SearchBarAppbarState extends State<SearchBarAppbar> {
+class SearchBarAppbarState extends ConsumerState<SearchBarAppbar> {
 
   @override
   Widget build(BuildContext context) {
