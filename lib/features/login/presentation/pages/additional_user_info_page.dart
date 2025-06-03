@@ -5,19 +5,20 @@ import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
 import 'package:danew/core/widgets/button/basic_btn.dart';
 import 'package:danew/core/widgets/text_field_title.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class AdditionalUserInfoPage extends StatefulWidget {
+class AdditionalUserInfoPage extends ConsumerStatefulWidget {
   const AdditionalUserInfoPage({super.key});
 
   @override
-  State<AdditionalUserInfoPage> createState() => _AdditionalUserInfoPageState();
+  AdditionalUserInfoPageState createState() => AdditionalUserInfoPageState();
 }
 
-class _AdditionalUserInfoPageState extends State<AdditionalUserInfoPage> {
+class AdditionalUserInfoPageState extends ConsumerState<AdditionalUserInfoPage> {
   @override
   Widget build(BuildContext context) {
     TextEditingController nameTextEditingController = TextEditingController();
