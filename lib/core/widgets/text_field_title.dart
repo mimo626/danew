@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../theme/colors.dart';
 import '../theme/sizedbox.dart';
 import '../theme/text_styles.dart';
 
-class TextFieldTitle extends StatelessWidget {
+class TextFieldTitle extends ConsumerWidget {
   final String? title; // 제목
   final TextEditingController controller; // 컨트롤러
   final bool isObscureText; // 비밀번호 입력 시 설정
@@ -30,7 +31,7 @@ class TextFieldTitle extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
