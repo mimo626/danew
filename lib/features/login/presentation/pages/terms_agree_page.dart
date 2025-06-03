@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -8,14 +9,14 @@ import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 import '../../../../core/widgets/button/basic_btn.dart';
 
-class TermsAgreePage extends StatefulWidget {
+class TermsAgreePage extends ConsumerStatefulWidget {
   const TermsAgreePage({super.key});
 
   @override
-  State<TermsAgreePage> createState() => _TermsAgreePageState();
+  TermsAgreePageState createState() => TermsAgreePageState();
 }
 
-class _TermsAgreePageState extends State<TermsAgreePage> {
+class TermsAgreePageState extends ConsumerState<TermsAgreePage> {
   bool isAllChecked = false; // 전체 동의 체크박스 상태
   List<bool> isChecked = [false, false, false]; // 개별 항목 체크 상태
 
