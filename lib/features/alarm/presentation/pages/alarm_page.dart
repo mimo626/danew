@@ -1,19 +1,20 @@
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/widgets/list_view_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 
-class AlarmPage extends StatefulWidget {
+class AlarmPage extends ConsumerStatefulWidget {
   const AlarmPage({super.key});
 
   @override
-  State<AlarmPage> createState() => _AlarmPageState();
+  AlarmPageState createState() => AlarmPageState();
 }
 
-class _AlarmPageState extends State<AlarmPage> {
+class AlarmPageState extends ConsumerState<AlarmPage> {
   List<String> alarmList = ["알람1", "알람2", "알람3"];
 
   @override
