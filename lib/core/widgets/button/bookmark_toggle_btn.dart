@@ -1,14 +1,15 @@
 import 'package:danew/core/theme/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class BookmarkToggleBtn extends StatefulWidget {
+class BookmarkToggleBtn extends ConsumerStatefulWidget {
   const BookmarkToggleBtn({super.key});
 
   @override
-  _BookmarkToggleBtnState createState() => _BookmarkToggleBtnState();
+  BookmarkToggleBtnState createState() => BookmarkToggleBtnState();
 }
 
-class _BookmarkToggleBtnState extends State<BookmarkToggleBtn> {
+class BookmarkToggleBtnState extends ConsumerState<BookmarkToggleBtn> {
   bool isBookmarked = false;
 
   @override
