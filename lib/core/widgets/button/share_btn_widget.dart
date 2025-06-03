@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../theme/colors.dart';
 
-class ShareBtnWidget extends StatefulWidget {
+class ShareBtnWidget extends ConsumerStatefulWidget {
   const ShareBtnWidget({super.key});
 
   @override
-  State<ShareBtnWidget> createState() => _ShareBtnWidgetState();
+  ShareBtnWidgetState createState() => ShareBtnWidgetState();
 }
 
-class _ShareBtnWidgetState extends State<ShareBtnWidget> {
+class ShareBtnWidgetState extends ConsumerState<ShareBtnWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
