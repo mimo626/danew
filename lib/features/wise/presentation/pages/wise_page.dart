@@ -3,19 +3,20 @@ import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/theme/text_styles.dart';
 import 'package:danew/core/widgets/button/bookmark_toggle_btn.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/globals/globals.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 
-class WisePage extends StatefulWidget {
+class WisePage extends ConsumerStatefulWidget {
   const WisePage({super.key});
 
   @override
-  State<WisePage> createState() => _WisePageState();
+  WisePageState createState() => WisePageState();
 }
 
-class _WisePageState extends State<WisePage> {
+class WisePageState extends ConsumerState<WisePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
