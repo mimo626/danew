@@ -4,17 +4,18 @@ import 'package:danew/core/widgets/tab_widget.dart';
 import 'package:danew/features/bookmark/presentation/widgets/bookmark_news_tab_view.dart';
 import 'package:danew/features/bookmark/presentation/widgets/bookmark_wise_tab_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 
-class BookmarkPage extends StatefulWidget {
+class BookmarkPage extends ConsumerStatefulWidget {
   const BookmarkPage({super.key});
 
   @override
-  State<BookmarkPage> createState() => _BookmarkPageState();
+  BookmarkPageState createState() => BookmarkPageState();
 }
 
-class _BookmarkPageState extends State<BookmarkPage> {
+class BookmarkPageState extends ConsumerState<BookmarkPage> {
   final tabViews = [
     BookmarkNewsTabView(),
     BookmarkWiseTabView()
