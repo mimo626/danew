@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/theme/padding.dart';
 
-class SettingListTileWidget extends StatelessWidget {
+class SettingListTileWidget extends ConsumerWidget {
   final String title;
   final VoidCallback onTap;
   const SettingListTileWidget({
@@ -13,7 +14,7 @@ class SettingListTileWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onTap,
       child: Padding(
