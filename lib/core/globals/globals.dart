@@ -81,8 +81,28 @@ class Globals {
 
   // 홈의 뉴스 카테고리 탭 위젯
   static List<String> homeTab = [
-    "추천", "인기", "정치", "경제", "엔터", "세계", "환경", "스포츠",
-    "기술", "음식"
+    "추천", "인기", "정치", "경제", "범죄", "기술", "교육", "과학",
+    "엔터", "환경", "스포츠", "세계", "건강", "일상", "국내", "관광", "음식", "기타"
+  ];
+
+  static List<String> newsCategoryEn = [
+    "top",
+    "politics",
+    "business",
+    "crime",
+    "technology",
+    "education",
+    "science",
+    "entertainment",
+    "environment",
+    "sports",
+    "world",
+    "health",
+    "lifestyle",
+    "domestic",
+    "tourism",
+    "food",
+    "other"
   ];
 
   // 북마크의 카테고리 탭 위젯
