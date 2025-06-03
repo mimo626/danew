@@ -1,8 +1,6 @@
 import 'package:danew/core/theme/colors.dart';
-import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/theme/text_styles.dart';
-import 'package:danew/core/widgets/app_bar/search_app_bar.dart';
 import 'package:danew/core/widgets/button/basic_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

@@ -1,4 +1,3 @@
-import 'package:danew/core/globals/news_data.dart';
 import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';

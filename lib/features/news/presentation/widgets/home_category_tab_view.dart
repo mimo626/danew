@@ -1,5 +1,4 @@
 import 'package:danew/core/globals/news_category.dart';
-import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:danew/features/news/presentation/providers/newsListProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -9,7 +8,6 @@ import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/sizedbox.dart';
 import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/list_view_widget.dart';
-import '../../data/datasources/news_api_service.dart';
 import 'news_big_img_card_widget.dart';
 import 'news_small_img_card_widget.dart';
 import 'news_title_widget.dart';

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../../core/globals/news_data.dart';
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
