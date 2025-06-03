@@ -29,24 +29,24 @@ class NewsApiService {
   );
 
   /// 뉴스 목록 조회
-  Future<List<NewsModel>> fetchNews(String query, List<String> category) async {
+  Future<List<NewsModel>> fetchNews(List<String> category) async {
     try {
       final response = await dio.get('', queryParameters:
       {
         "country" : "kr"
-        ,"category" : "business"
+        ,"category" : category
         ,"apikey" : "pub_83780fb69a56440dbbeb6c4373fcb5ebb1535"
-        ,"q" : "정치"
       }
       );
 
+      //TODO nextPage를 받아서 무한 스크롤 가능하게 수정 필요
       if (response.statusCode == 200) {
         dynamic data = response.data;
 
         List<Map<String, dynamic>> results = List<Map<String, dynamic>>.from(data["results"]);
         logger.i(data);
         List<NewsModel> newsList = results.map((json) => NewsMapper.jsonToModel(json)).toList();
-        logger.i("뉴스 조회 성공 ${newsList}");
+        logger.i("뉴스 조회 성공 ${newsList.length}");
         return newsList;
       } else {
         throw Exception('뉴스 데이터를 가져오지 못했습니다.');
