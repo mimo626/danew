@@ -5,19 +5,20 @@ import 'package:danew/core/theme/text_styles.dart';
 import 'package:danew/core/widgets/button/bookmark_toggle_btn.dart';
 import 'package:danew/core/widgets/button/share_btn_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 
-class NewsDetailPage extends StatefulWidget {
+class NewsDetailPage extends ConsumerStatefulWidget {
   final NewsData newsData;
   const NewsDetailPage({super.key, required this.newsData});
 
   @override
-  State<NewsDetailPage> createState() => _NewsDetailPageState();
+  NewsDetailPageState createState() => NewsDetailPageState();
 }
 
-class _NewsDetailPageState extends State<NewsDetailPage> {
+class NewsDetailPageState extends ConsumerState<NewsDetailPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
