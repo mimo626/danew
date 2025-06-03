@@ -6,15 +6,16 @@ import 'package:danew/features/news/presentation/pages/home_page.dart';
 import 'package:danew/features/user_management/presentation/pages/my_page.dart';
 import 'package:danew/features/wise/presentation/pages/wise_page.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-class MainPage extends StatefulWidget {
+class MainPage extends ConsumerStatefulWidget {
   const MainPage({super.key});
 
   @override
-  State<MainPage> createState() => _MainPageState();
+  MainPageState createState() => MainPageState();
 }
 
-class _MainPageState extends State<MainPage> with TickerProviderStateMixin {
+class MainPageState extends ConsumerState<MainPage> with TickerProviderStateMixin {
   late TabController _tabController;
   int _selectedIndex = 0;
 
