@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class KeywordBtnWidget extends StatefulWidget {
+class KeywordBtnWidget extends ConsumerStatefulWidget {
   final String keyword;
   const KeywordBtnWidget({super.key, required this.keyword});
 
   @override
-  State<KeywordBtnWidget> createState() => _KeywordBtnWidgetState();
+  KeywordBtnWidgetState createState() => KeywordBtnWidgetState();
 }
 
-class _KeywordBtnWidgetState extends State<KeywordBtnWidget> {
+class KeywordBtnWidgetState extends ConsumerState<KeywordBtnWidget> {
   bool isSelect = false;
 
   @override
