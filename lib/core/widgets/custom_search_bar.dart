@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../theme/colors.dart';
@@ -6,14 +7,14 @@ import '../theme/padding.dart';
 import '../theme/sizedbox.dart';
 import '../theme/text_styles.dart';
 
-class CustomSearchBar extends StatefulWidget {
+class CustomSearchBar extends ConsumerStatefulWidget {
   const CustomSearchBar({super.key});
 
   @override
-  State<CustomSearchBar> createState() => _CustomSearchBarState();
+  CustomSearchBarState createState() => CustomSearchBarState();
 }
 
-class _CustomSearchBarState extends State<CustomSearchBar> {
+class CustomSearchBarState extends ConsumerState<CustomSearchBar> {
   final TextEditingController searchController = TextEditingController();
   bool hasText = false; // 검색어가 있는지 여부
 
