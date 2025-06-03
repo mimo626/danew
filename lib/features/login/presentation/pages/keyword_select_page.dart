@@ -1,6 +1,7 @@
 import 'package:danew/core/globals/globals.dart';
 import 'package:danew/features/login/presentation/widgets/keyword_btn_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/theme/colors.dart';
@@ -10,14 +11,14 @@ import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 import '../../../../core/widgets/button/basic_btn.dart';
 
-class KeywordSelectPage extends StatefulWidget {
+class KeywordSelectPage extends ConsumerStatefulWidget {
   const KeywordSelectPage({super.key});
 
   @override
-  State<KeywordSelectPage> createState() => _KeywordSelectPageState();
+  KeywordSelectPageState createState() => KeywordSelectPageState();
 }
 
-class _KeywordSelectPageState extends State<KeywordSelectPage> {
+class KeywordSelectPageState extends ConsumerState<KeywordSelectPage> {
 
   @override
   Widget build(BuildContext context) {
