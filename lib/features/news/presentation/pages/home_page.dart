@@ -8,33 +8,24 @@ import 'package:danew/features/news/presentation/widgets/home_category_tab_view.
 import 'package:danew/features/news/presentation/widgets/home_recommend_tab_view.dart';
 import 'package:danew/features/search/presentation/widgets/search_btn_widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 
-class HomePage extends StatefulWidget {
+class HomePage extends ConsumerStatefulWidget {
   const HomePage({super.key});
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  HomePageState createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
-  final tabViews = Globals.homeTab.map((category) {
+class HomePageState extends ConsumerState<HomePage> {
+  final tabViews = Globals.newsCategoryKr.map((category) {
     if(category == "추천"){
-      return HomeRecommendTabView();
+      return HomeRecommendTabView(categoryList: ["정치, 경제"],);
     }else{
       return HomeCategoryTabView(category: category);
     }
   },).toList();
-  final apiService = NewsApiService();
-
-  Future<void> newsTest() async {
-    await apiService.fetchNews("정치", ["business"]);
-  }
-  @override
-  void initState() {
-    super.initState();
-    newsTest();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,7 +45,7 @@ class _HomePageState extends State<HomePage> {
           // 뉴스 카테고리 탭
           Expanded(
             child: TabWidget(
-                tabTitles: Globals.homeTab,
+                tabTitles: Globals.newsCategoryKr,
                 tabViews: tabViews,
               isScrollable: true,
             ),
