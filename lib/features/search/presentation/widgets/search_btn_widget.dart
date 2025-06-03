@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:go_router/go_router.dart';
 
@@ -6,14 +7,14 @@ import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class SearchBtnWidget extends StatefulWidget {
+class SearchBtnWidget extends ConsumerStatefulWidget {
   const SearchBtnWidget({super.key});
 
   @override
-  State<SearchBtnWidget> createState() => _SearchBtnWidgetState();
+  SearchBtnWidgetState createState() => SearchBtnWidgetState();
 }
 
-class _SearchBtnWidgetState extends State<SearchBtnWidget> {
+class SearchBtnWidgetState extends ConsumerState<SearchBtnWidget> {
   @override
   Widget build(BuildContext context) {
     return InkWell(
