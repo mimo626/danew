@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 
-class NewsFlashContainer extends StatefulWidget {
+class NewsFlashContainer extends ConsumerStatefulWidget {
   final String newsTitle;
   const NewsFlashContainer({super.key, required this.newsTitle});
 
   @override
-  State<NewsFlashContainer> createState() => _NewsFlashContainerState();
+  NewsFlashContainerState createState() => NewsFlashContainerState();
 }
 
-class _NewsFlashContainerState extends State<NewsFlashContainer> {
+class NewsFlashContainerState extends ConsumerState<NewsFlashContainer> {
   @override
   Widget build(BuildContext context) {
     return Container(
