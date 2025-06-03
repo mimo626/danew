@@ -1,10 +1,11 @@
 import 'package:danew/core/theme/text_styles.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 
-class MyListWidget extends StatelessWidget {
+class MyListWidget extends ConsumerWidget {
   final String title;
   final VoidCallback onTap;
   final Color color;
@@ -15,7 +16,7 @@ class MyListWidget extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return InkWell(
       onTap: onTap,
       child: Column(
