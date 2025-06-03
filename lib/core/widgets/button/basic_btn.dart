@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../theme/colors.dart';
 import '../../theme/padding.dart';
 import '../../theme/text_styles.dart';
 
-class BasicBtn extends StatelessWidget {
+class BasicBtn extends ConsumerWidget {
   final String btnText;
   final Color textColor;
   final Color backgroundColor;
@@ -19,7 +20,7 @@ class BasicBtn extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Padding(
       padding:AppPadding.h20Padding,
       child: ElevatedButton(
