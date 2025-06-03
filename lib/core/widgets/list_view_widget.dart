@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../theme/padding.dart';
 
-class ListViewWidget extends StatefulWidget {
+class ListViewWidget extends ConsumerStatefulWidget {
   final List<dynamic> list;
   final int listLength;
   final Widget Function(dynamic item) listWidgetBuilder;
@@ -12,10 +13,10 @@ class ListViewWidget extends StatefulWidget {
     required this.listWidgetBuilder});
 
   @override
-  State<ListViewWidget> createState() => _ListViewWidgetState();
+  ListViewWidgetState createState() => ListViewWidgetState();
 }
 
-class _ListViewWidgetState extends State<ListViewWidget> {
+class ListViewWidgetState extends ConsumerState<ListViewWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
