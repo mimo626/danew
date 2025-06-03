@@ -2,20 +2,21 @@ import 'package:danew/core/globals/globals.dart';
 import 'package:danew/features/diary/presentation/widgets/news_medium_img_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
 
-class DiaryPage extends StatefulWidget {
+class DiaryPage extends ConsumerStatefulWidget {
   const DiaryPage({super.key});
 
   @override
-  State<DiaryPage> createState() => _DiaryPageState();
+  DiaryPageState createState() => DiaryPageState();
 }
 
-class _DiaryPageState extends State<DiaryPage> {
+class DiaryPageState extends ConsumerState<DiaryPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
