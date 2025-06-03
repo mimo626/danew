@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../theme/colors.dart';
 import '../theme/text_styles.dart';
 
-class TabWidget extends StatefulWidget {
+class TabWidget extends ConsumerStatefulWidget {
   final List<String> tabTitles;
   final List<Widget> tabViews;
   final isScrollable;
@@ -16,10 +17,10 @@ class TabWidget extends StatefulWidget {
   }) : assert(tabTitles.length == tabViews.length, '탭 제목과 내용의 길이가 일치해야 합니다.');
 
   @override
-  State<TabWidget> createState() => _TabWidgetState();
+  TabWidgetState createState() => TabWidgetState();
 }
 
-class _TabWidgetState extends State<TabWidget> with TickerProviderStateMixin {
+class TabWidgetState extends ConsumerState<TabWidget> with TickerProviderStateMixin {
   late TabController _tabController;
   int selectedIndex = 0;
 
