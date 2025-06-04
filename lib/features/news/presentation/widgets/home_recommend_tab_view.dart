@@ -28,7 +28,7 @@ class HomeRecommendTabViewState extends ConsumerState<HomeRecommendTabView> {
   Widget build(BuildContext context) {
     // 카테고리 -> 영어로 바꿔서 api로 전달 후 뉴스 리스트 반환
     //TODO 나중에 카테고리 리스트로 수정
-    final newsAsync = ref.watch(newsListProvider(NewsCategory.categoryKrToEnTranslate("정치")));
+    final newsAsync = ref.watch(newsListProvider(NewsCategory.categoryKrToEn["정치"]!));
 
     return newsAsync.when(
         data: (newsList) => SingleChildScrollView(
