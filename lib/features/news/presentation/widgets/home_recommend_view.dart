@@ -13,17 +13,17 @@ import '../../../../core/widgets/list_view_widget.dart';
 import '../providers/newsListProvider.dart';
 import 'news_title_widget.dart';
 
-class HomeRecommendTabView extends ConsumerStatefulWidget {
+class HomeRecommendView extends ConsumerStatefulWidget {
   final List<String> categoryList;
-  const HomeRecommendTabView({
+  const HomeRecommendView({
     super.key, required this.categoryList
   });
 
   @override
-  HomeRecommendTabViewState createState() => HomeRecommendTabViewState();
+  HomeRecommendViewState createState() => HomeRecommendViewState();
 }
 
-class HomeRecommendTabViewState extends ConsumerState<HomeRecommendTabView> {
+class HomeRecommendViewState extends ConsumerState<HomeRecommendView> {
   @override
   Widget build(BuildContext context) {
     // 카테고리 -> 영어로 바꿔서 api로 전달 후 뉴스 리스트 반환
@@ -35,6 +35,7 @@ class HomeRecommendTabViewState extends ConsumerState<HomeRecommendTabView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              AppSizedBox.h16SizedBox,
               NewsFlashContainer(newsTitle: "AI 챗봇, 병원 예약·진료 안내 서비스에 도입"),
               AppSizedBox.h12SizedBox,
               Padding(
