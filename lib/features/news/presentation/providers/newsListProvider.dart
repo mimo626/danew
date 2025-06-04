@@ -5,6 +5,5 @@ import '../../data/datasources/news_api_service.dart';
 
 final newsListProvider = FutureProvider.family<List<NewsModel>, String>((ref, category) async {
   final api = NewsApiService();
-  logger.i(category);
   return await api.fetchNews([category]);
 });
