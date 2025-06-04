@@ -1,3 +1,4 @@
+import 'package:danew/core/globals/news_category.dart';
 import 'package:danew/core/globals/news_data.dart';
 import 'package:danew/core/intl/date_formatter.dart';
 import 'package:danew/core/theme/padding.dart';
@@ -34,31 +35,37 @@ class NewsDetailPageState extends ConsumerState<NewsDetailPage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppSizedBox.h16SizedBox,
-              ListViewWidget(
-                  list: widget.newsData.category,
-                  listLength: widget.newsData.category.length,
-                  listWidgetBuilder: (item) => Padding(
-                    padding: AppPadding.right8Padding,
-                    child: Container(
+              Wrap(
+                spacing: 8,
+                children: widget.newsData.category.map((item) =>
+                    Container(
+                      padding: AppPadding.h12v6Padding,
                       decoration: BoxDecoration(
-                          color: AppColors.tertiaryColor,
-                          borderRadius: BorderRadius.circular(20)
+                        color: AppColors.fortyColor,
+                        borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Padding(
-                        padding: AppPadding.h12v6Padding,
-                        child: Text(item, style: AppTextStyles.medium14.copyWith(color: AppColors.primaryColor),),),
-                    ),
-                  ),
+                      child: Text(NewsCategory.categoryEnToKr[item] ?? "기타", style: AppTextStyles.semiBold16.copyWith(color: AppColors.primaryColor)),
+                    )
+                ).toList(),
               ),
               AppSizedBox.h12SizedBox,
               Text(widget.newsData.title!, style: AppTextStyles.medium18,),
               AppSizedBox.h12SizedBox,
               Text(DateFormatter.formatYearMonthDate(widget.newsData.pub_date), style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor),),
-              AppSizedBox.h4SizedBox,
-              ListViewWidget(
-                  list: widget.newsData.category,
-                  listLength: widget.newsData.category.length,
-                  listWidgetBuilder: (item) => Text("${item}, ", style: AppTextStyles.medium14),
+              AppSizedBox.h8SizedBox,
+              Row(
+                children: [
+                  Container(
+                    padding: AppPadding.h8v4Padding,
+                    decoration: BoxDecoration(
+                      color: AppColors.lightGreyColor,
+                      borderRadius: BorderRadius.circular(4),
+                    ),
+                    child: Text("작성자", style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor)),
+                  ),
+                  AppSizedBox.w8SizedBox,
+                  Text("${widget.newsData.creator[0]}", style: AppTextStyles.medium14)
+                ],
               ),
               AppSizedBox.h16SizedBox,
               Row(
