@@ -46,13 +46,19 @@ class NewsSmallImgCardWidget extends ConsumerWidget {
               ),
               Expanded(
                 flex: 1,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(4),
-                  //TODO 빈 이미지 채우기
-                  child: Image.network(
-                    item.image_url ?? "",
-                    fit: BoxFit.cover,
-                    height: 60,
+                child: Container(
+                  height: 60,
+                  decoration: BoxDecoration(
+                    color: AppColors.lightGreyColor,
+                    borderRadius: BorderRadius.circular(4),
+                  ),
+                  clipBehavior: Clip.hardEdge, // 둥근 모서리 적용에 필요
+                  child: Center(
+                    child: Image.network(
+                      item.image_url ?? "",
+                      fit: BoxFit.fitHeight, // 높이를 기준으로 맞추고, 가로가 작으면 가운데 정렬됨
+                      height: 60,
+                    ),
                   ),
                 ),
               ),
