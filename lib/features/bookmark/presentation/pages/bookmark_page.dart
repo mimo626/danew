@@ -1,6 +1,4 @@
-import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/widgets/app_bar/primary_appbar.dart';
-import 'package:danew/core/widgets/tab_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
