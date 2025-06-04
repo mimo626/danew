@@ -1,3 +1,4 @@
+import 'package:danew/core/theme/colors.dart';
 import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -23,17 +24,23 @@ class NewsBigImgCardWidgetState extends ConsumerState<NewsBigImgCardWidget> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8),
-              //TODO 빈 이미지 채우기
-              child: Image.network(
-                widget.newsData.image_url ?? "",
-                fit: BoxFit.cover,
-                height: 120,
+            Container(
+              height: 120,
+              decoration: BoxDecoration(
+                color: AppColors.lightGreyColor,
+                borderRadius: BorderRadius.circular(8),
+              ),
+              clipBehavior: Clip.hardEdge, // 둥근 모서리 적용에 필요
+              child: Center(
+                child: Image.network(
+                  widget.newsData.image_url ?? "",
+                  fit: BoxFit.fitHeight, // 높이를 기준으로 맞추고, 가로가 작으면 가운데 정렬됨
+                  height: 120,
+                ),
               ),
             ),
             AppSizedBox.h4SizedBox,
-            Text(widget.newsData.title!, style: AppTextStyles.medium14,)
+            Text(widget.newsData.title!, style: AppTextStyles.medium14, maxLines: 2,)
           ],
         ),
       ),
