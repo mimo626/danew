@@ -3,7 +3,9 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../data/datasources/news_api_service.dart';
 
-final newsListProvider = FutureProvider.family<List<NewsModel>, String>((ref, category) async {
-  final api = NewsApiService();
-  return await api.fetchNews([category]);
-});
+final newsListProvider =
+  FutureProvider.family<List<NewsModel>, String>((ref, category) async {
+    final api = NewsApiService();
+    return await api.fetchNews([category]);
+  }
+);
