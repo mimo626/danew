@@ -27,16 +27,16 @@ class Globals {
     ),
     NavItem(
       icon: Icon(
-        Icons.wb_sunny_outlined,
+        Icons.menu_outlined,
         color: AppColors.primaryColor,
         size: Globals.navItemSize,
       ),
       activeIcon: Icon(
-        Icons.wb_sunny,
+        Icons.menu,
         color: AppColors.primaryColor,
         size: Globals.navItemSize,
       ),
-      label: "명언",
+      label: "카테고리",
     ),
     NavItem(
       icon: Icon(
@@ -81,12 +81,11 @@ class Globals {
 
   // 홈의 뉴스 카테고리 탭 위젯
   static List<String> newsCategoryKr = [
-    "추천", "인기", "정치", "경제", "엔터", "스포츠", "기술",
+    "정치", "경제", "엔터", "스포츠", "기술",
     "과학", "세계", "건강", "일상",
   ];
 
   static List<String> newsCategoryEn = [
-    "top",
     "politics",
     "business",
     "entertainment",
