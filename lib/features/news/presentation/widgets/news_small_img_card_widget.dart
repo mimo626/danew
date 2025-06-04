@@ -54,10 +54,16 @@ class NewsSmallImgCardWidget extends ConsumerWidget {
                   ),
                   clipBehavior: Clip.hardEdge, // 둥근 모서리 적용에 필요
                   child: Center(
-                    child: Image.network(
-                      item.image_url ?? "",
-                      fit: BoxFit.fitHeight, // 높이를 기준으로 맞추고, 가로가 작으면 가운데 정렬됨
-                      height: 60,
+                    child: (item.image_url ?? "").isNotEmpty
+                        ? Image.network(
+                          item.image_url!,
+                          fit: BoxFit.fitHeight,
+                          height: 60,
+                        )
+                        : Image.asset(
+                          "lib/core/images/empty_img.png",
+                          fit: BoxFit.fitHeight,
+                          height: 60,
                     ),
                   ),
                 ),

@@ -32,9 +32,15 @@ class NewsBigImgCardWidgetState extends ConsumerState<NewsBigImgCardWidget> {
               ),
               clipBehavior: Clip.hardEdge, // 둥근 모서리 적용에 필요
               child: Center(
-                child: Image.network(
-                  widget.newsData.image_url ?? "",
-                  fit: BoxFit.fitHeight, // 높이를 기준으로 맞추고, 가로가 작으면 가운데 정렬됨
+                child: (widget.newsData.image_url ?? "").isNotEmpty
+                    ? Image.network(
+                  widget.newsData.image_url!,
+                  fit: BoxFit.fitHeight,
+                  height: 120,
+                )
+                    : Image.asset(
+                  "lib/core/images/empty_img.png",
+                  fit: BoxFit.fitHeight,
                   height: 120,
                 ),
               ),
