@@ -68,8 +68,9 @@ class HomeRecommendViewState extends ConsumerState<HomeRecommendView> {
               ),
               Padding(
                 padding: AppPadding.h20v16Padding,
-                child: Text("실시간 맞춤 뉴스", style: AppTextStyles.semiBold18,),
+                child: Text("TOP 인기있는 뉴스", style: AppTextStyles.semiBold18,),
               ),
+
               // 뉴스 이미지 카드 리스트
               ListViewWidget(
                   list: newsList.sublist(5),
