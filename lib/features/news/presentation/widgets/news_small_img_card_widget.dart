@@ -1,4 +1,5 @@
- import 'package:danew/features/news/data/model/news_model.dart';
+ import 'package:danew/core/intl/date_formatter.dart';
+import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -38,7 +39,7 @@ class NewsSmallImgCardWidget extends ConsumerWidget {
                       Text(item.title!, style: AppTextStyles.medium14,
                       maxLines: 2,),
                       SizedBox(),
-                      Text("${item.pub_date}", style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor),),
+                      Text(DateFormatter.formatYearMonthDate(item.pub_date), style: AppTextStyles.medium12.copyWith(color: AppColors.greyColor),),
                     ],
                   ),
                 ),
