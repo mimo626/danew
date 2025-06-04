@@ -1,4 +1,5 @@
- import 'package:danew/core/intl/date_formatter.dart';
+ import 'package:cached_network_image/cached_network_image.dart';
+import 'package:danew/core/intl/date_formatter.dart';
 import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -55,16 +56,12 @@ class NewsSmallImgCardWidget extends ConsumerWidget {
                   clipBehavior: Clip.hardEdge, // 둥근 모서리 적용에 필요
                   child: Center(
                     child: (item.image_url ?? "").isNotEmpty
-                        ? Image.network(
-                          item.image_url!,
-                          fit: BoxFit.fitHeight,
-                          height: 60,
-                        )
-                        : Image.asset(
-                          "lib/core/images/empty_img.png",
-                          fit: BoxFit.fitHeight,
-                          height: 60,
-                    ),
+                        ? CachedNetworkImage(
+                          imageUrl: item.image_url!,
+                        fit: BoxFit.fitHeight,
+                        height: 60,
+                      errorWidget: (context, url, error) => _buildFallbackImage(),
+                    ) : _buildFallbackImage()
                   ),
                 ),
               ),
@@ -72,6 +69,13 @@ class NewsSmallImgCardWidget extends ConsumerWidget {
           ),
         ),
       ),
+    );
+  }
+  Widget _buildFallbackImage() {
+    return Image.asset(
+      'lib/core/images/empty_img.png',
+      fit: BoxFit.fitHeight,
+      height: 60,
     );
   }
 }
