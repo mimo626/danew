@@ -19,11 +19,12 @@ class _BookmarkNewsTabViewState extends State<BookmarkNewsTabView> {
       child: Column(
         children: [
           AppSizedBox.h16SizedBox,
-          ListViewWidget(
-              list: Globals.newsSmallImgCardData,
-              listLength: Globals.newsSmallImgCardDataLength,
-              listWidgetBuilder: (item) => NewsSmallImgCardWidget(item: item)
-          ),        ],
+          // ListViewWidget(
+          //     list: Globals.newsSmallImgCardData,
+          //     listLength: 7,
+          //     listWidgetBuilder: (item) => NewsSmallImgCardWidget(item: item)
+          // ),
+        ],
       ),
     );
   }
