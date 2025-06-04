@@ -29,7 +29,7 @@ class HomeCategoryTabViewState extends ConsumerState<HomeCategoryTabView> {
   @override
   Widget build(BuildContext context) {
     // 카테고리 -> 영어로 바꿔서 api로 전달 후 뉴스 리스트 반환
-    final newsAsync = ref.watch(newsListProvider(NewsCategory.categoryKrToEnTranslate(widget.category)));
+    final newsAsync = ref.watch(newsListProvider(NewsCategory.categoryKrToEn[widget.category] ?? "other"));
 
     return newsAsync.when(
         data: (newsList) => SingleChildScrollView(
