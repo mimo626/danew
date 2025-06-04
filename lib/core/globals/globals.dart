@@ -98,6 +98,10 @@ class Globals {
     "lifestyle",
   ];
 
+  // 해당 안되는 카테고리인 경우
+  static String otherCategoryEn = "other";
+  static String otherCategoryKr = "기타";
+
   // 북마크의 카테고리 탭 위젯
   static List<String> bookmarkTab = [
     "뉴스", "명언",
