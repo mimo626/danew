@@ -20,7 +20,7 @@ class NewsTitleWidget extends ConsumerWidget {
       children: [
         InkWell(
             onTap: () => context.push("/newsDetail", extra: {"newsData": item}),
-            child: Text(item.title!, style: AppTextStyles.medium14,)
+            child: Text(item.title!, style: AppTextStyles.medium14, maxLines: 1,)
         ),
         Divider(color: AppColors.lightGreyColor,)
       ],
