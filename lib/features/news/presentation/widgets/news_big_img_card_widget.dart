@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:flutter/material.dart';
@@ -33,16 +34,12 @@ class NewsBigImgCardWidgetState extends ConsumerState<NewsBigImgCardWidget> {
               clipBehavior: Clip.hardEdge, // 둥근 모서리 적용에 필요
               child: Center(
                 child: (widget.newsData.image_url ?? "").isNotEmpty
-                    ? Image.network(
-                  widget.newsData.image_url!,
+                    ? CachedNetworkImage(
+                  imageUrl: widget.newsData.image_url!,
                   fit: BoxFit.fitHeight,
                   height: 120,
-                )
-                    : Image.asset(
-                  "lib/core/images/empty_img.png",
-                  fit: BoxFit.fitHeight,
-                  height: 120,
-                ),
+                  errorWidget: (context, url, error) => _buildFallbackImage(),
+                ) : _buildFallbackImage()
               ),
             ),
             AppSizedBox.h4SizedBox,
@@ -50,6 +47,13 @@ class NewsBigImgCardWidgetState extends ConsumerState<NewsBigImgCardWidget> {
           ],
         ),
       ),
+    );
+  }
+  Widget _buildFallbackImage() {
+    return Image.asset(
+      'lib/core/images/empty_img.png',
+      fit: BoxFit.fitHeight,
+      height: 120,
     );
   }
 }
