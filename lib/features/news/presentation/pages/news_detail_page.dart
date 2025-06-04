@@ -1,3 +1,4 @@
+import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/globals/news_category.dart';
 import 'package:danew/core/globals/news_data.dart';
 import 'package:danew/core/intl/date_formatter.dart';
@@ -44,7 +45,10 @@ class NewsDetailPageState extends ConsumerState<NewsDetailPage> {
                         color: AppColors.fortyColor,
                         borderRadius: BorderRadius.circular(4),
                       ),
-                      child: Text(NewsCategory.categoryEnToKr[item] ?? "기타", style: AppTextStyles.semiBold16.copyWith(color: AppColors.primaryColor)),
+                      child: Text(
+                          NewsCategory.categoryEnToKr[item] ?? Globals.otherCategoryKr,
+                          style: AppTextStyles.semiBold16.copyWith(color: AppColors.primaryColor)
+                      ),
                     )
                 ).toList(),
               ),
