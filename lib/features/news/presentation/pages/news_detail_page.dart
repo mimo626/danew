@@ -1,13 +1,11 @@
 import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/globals/news_category.dart';
-import 'package:danew/core/globals/news_data.dart';
 import 'package:danew/core/intl/date_formatter.dart';
 import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/theme/text_styles.dart';
 import 'package:danew/core/widgets/button/bookmark_toggle_btn.dart';
 import 'package:danew/core/widgets/button/share_btn_widget.dart';
-import 'package:danew/core/widgets/list_view_widget.dart';
 import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
