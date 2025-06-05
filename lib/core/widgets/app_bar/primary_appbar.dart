@@ -1,4 +1,5 @@
 
+import 'package:danew/core/theme/padding.dart';
 import 'package:danew/core/theme/text_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -14,6 +15,7 @@ class PrimaryAppbar extends ConsumerStatefulWidget implements PreferredSizeWidge
   final String? title; // 제목
   final bool showNotificationIcon; // 알림 아이콘 유무
   final bool showSettingIcon; // 설정 아이콘 유무
+  final bool showSearchIcon; // 검색 아이콘 유무
   final bool showLogo; // 어플 로고 유무
   final bool isDivider;
 
@@ -25,6 +27,7 @@ class PrimaryAppbar extends ConsumerStatefulWidget implements PreferredSizeWidge
     this.title,
     this.showNotificationIcon = false,
     this.showSettingIcon = false,
+    this.showSearchIcon = false,
     this.showLogo = false,
     this.isDivider = false,
   });
@@ -74,6 +77,45 @@ class CommonAppBarState extends ConsumerState<PrimaryAppbar> {
           title: getTitleWidget(),
           centerTitle: true,
           actions: [
+            if (widget.showSearchIcon)
+              Padding(
+                padding: AppPadding.right8Padding,
+                child: SizedBox(
+                  width: 30,
+                  height: 30,
+                  child: IconButton(
+                    icon: SvgPicture.asset(
+                      'lib/core/icons/search.svg',
+                      width: 22,
+                      height: 22,
+                      color: AppColors.blackColor,
+                    ),
+                    onPressed: () {
+                      context.push("/search");
+                    },
+                    padding: const EdgeInsets.all(0),
+                  ),
+                ),
+              ),
+            if (widget.showSettingIcon)
+              Padding(
+                padding: AppPadding.right8Padding,
+                child: SizedBox(
+                  width: 30,
+                  height: 30,
+                  child: IconButton(
+                    icon: SvgPicture.asset(
+                      'lib/core/icons/setting.svg',
+                      width: 24,
+                      height: 24,
+                    ),
+                    onPressed: () {
+                      context.push("/settings");
+                    },
+                    padding: const EdgeInsets.all(0),
+                  ),
+                ),
+              ),
             if (widget.showNotificationIcon)
               Stack(
                 clipBehavior: Clip.none,
@@ -103,23 +145,6 @@ class CommonAppBarState extends ConsumerState<PrimaryAppbar> {
                     ),
                   ),
                 ],
-              ),
-            if (widget.showSettingIcon)
-              Padding(
-                padding: const EdgeInsets.only(right: 16.0), // 설정 아이콘 우측 여백
-                child: SizedBox(
-                  width: 24,
-                  height: 24,
-                  child: IconButton(
-                    icon: SvgPicture.asset(
-                      'lib/core/icons/setting.svg',
-                    ),
-                    onPressed: () {
-                      context.push("/settings");
-                    },
-                    padding: const EdgeInsets.all(0),
-                  ),
-                ),
               ),
         if (widget.isDivider)
           const Divider(
