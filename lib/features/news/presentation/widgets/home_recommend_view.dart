@@ -1,5 +1,8 @@
 import 'package:danew/core/globals/globals.dart';
+import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
+import 'package:danew/core/widgets/horizontal_list_view_widget.dart';
+import 'package:danew/features/news/data/model/news_model.dart';
 import 'package:danew/features/news/presentation/widgets/news_flash_container_widget.dart';
 import 'package:danew/features/news/presentation/widgets/news_big_img_card_widget.dart';
 import 'package:danew/features/news/presentation/widgets/news_small_img_card_widget.dart';
@@ -7,10 +10,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../core/globals/news_category.dart';
+import '../../../../core/intl/date_formatter.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
+import '../../../../core/widgets/divider_widget.dart';
 import '../../../../core/widgets/list_view_widget.dart';
 import '../providers/newsListProvider.dart';
+import 'news_title_card_widget.dart';
 import 'news_title_widget.dart';
 
 class HomeRecommendView extends ConsumerStatefulWidget {
@@ -36,21 +42,46 @@ class HomeRecommendViewState extends ConsumerState<HomeRecommendView> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               AppSizedBox.h16SizedBox,
-              NewsFlashContainer(newsTitle: "AI 챗봇, 병원 예약·진료 안내 서비스에 도입"),
-              AppSizedBox.h12SizedBox,
+              // 속보 뉴스
+              DividerWidget(),
               Padding(
                 padding: AppPadding.h20v16Padding,
                 child: Text("민주님을 위한 추천 뉴스", style: AppTextStyles.semiBold18,),
               ),
-              // 뉴스 제목 리스트
+              // 뉴스 이미지 카드 리스트
               ListViewWidget(
-                list: newsList.sublist(0,3),
-                listLength: Globals.NewsTItleDataLength,
-                listWidgetBuilder: (item) => NewsTitleWidget(item: item),
+                  list: newsList.sublist(5),
+                  listLength: newsList.length-5,
+                  listWidgetBuilder: (item) => NewsSmallImgCardWidget(item: item)
+              ),
+              DividerWidget(),
+              Padding(
+                padding: AppPadding.h20v16Padding,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text("현재 TOP 경제 뉴스", style: AppTextStyles.semiBold18,),
+                    Row(
+                      children: [
+                        Text("전체보기", style: AppTextStyles.regular13.copyWith(color: AppColors.blueColor),),
+                        AppSizedBox.w2SizedBox,
+                        Icon(Icons.arrow_forward_ios_outlined, color: AppColors.blueColor, size: 12,)
+                      ],
+                    )
+                  ],
+                ),
+              ),
+              HorizontalListViewWidget(
+                  list: newsList.sublist(5,8),
+                  listLength: 3,
+                  listWidgetBuilder: (item) => Padding(
+                    padding: AppPadding.right8Padding,
+                    child: NewsTitleCardWidget(newsModel: item),
+                  ),
               ),
               // 뉴스 이미지 카드
               Padding(
-                padding: AppPadding.h20v12Padding,
+                padding: AppPadding.h20v16Padding,
                 child: SafeArea(
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -66,11 +97,7 @@ class HomeRecommendViewState extends ConsumerState<HomeRecommendView> {
                   ),
                 ),
               ),
-              Padding(
-                padding: AppPadding.h20v16Padding,
-                child: Text("TOP 인기있는 뉴스", style: AppTextStyles.semiBold18,),
-              ),
-
+              DividerWidget(),
               // 뉴스 이미지 카드 리스트
               ListViewWidget(
                   list: newsList.sublist(5),
@@ -85,3 +112,4 @@ class HomeRecommendViewState extends ConsumerState<HomeRecommendView> {
     );
   }
 }
+
