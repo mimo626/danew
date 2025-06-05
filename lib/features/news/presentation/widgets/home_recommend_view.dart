@@ -1,3 +1,5 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
@@ -8,6 +10,7 @@ import 'package:danew/features/news/presentation/widgets/news_big_img_card_widge
 import 'package:danew/features/news/presentation/widgets/news_small_img_card_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../../core/globals/news_category.dart';
 import '../../../../core/intl/date_formatter.dart';
@@ -41,9 +44,38 @@ class HomeRecommendViewState extends ConsumerState<HomeRecommendView> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              AppSizedBox.h16SizedBox,
+              AppSizedBox.h12SizedBox,
               // 속보 뉴스
-              DividerWidget(),
+              CarouselSlider(
+                options: CarouselOptions(
+                  height: 50,
+                  autoPlay: true,
+                  autoPlayInterval: Duration(seconds: 4),
+                  autoPlayAnimationDuration: Duration(milliseconds: 800),
+                  autoPlayCurve: Curves.fastOutSlowIn,
+                  scrollDirection: Axis.vertical,
+                ),
+                items: newsList.sublist(0,3).map((item) {
+                  return Builder(
+                    builder: (BuildContext context) {
+                      return InkWell(
+                        onTap: () => context.push("/newsDetail", extra: {"newsData": item}),
+                        child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            decoration: BoxDecoration(
+                                color: AppColors.darkGreyColor,
+                            ),
+                            child: Padding(
+                              padding: AppPadding.h20v8Padding,
+                              child: Text(item.title!, style: AppTextStyles.medium16.copyWith(color: AppColors.whiteColor),
+                                maxLines: 1, overflow: TextOverflow.ellipsis,),
+                            )
+                        ),
+                      );
+                    },
+                  );
+                }).toList(),
+              ),
               Padding(
                 padding: AppPadding.h20v16Padding,
                 child: Text("민주님을 위한 추천 뉴스", style: AppTextStyles.semiBold18,),
