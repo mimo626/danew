@@ -28,6 +28,7 @@ class CategoryPageState extends ConsumerState<CategoryPage> {
       appBar: PrimaryAppbar(
         title: "카테고리",
         showNotificationIcon: true,
+        showSearchIcon: true,
       ),
       backgroundColor: AppColors.whiteColor,
       body: Column(
