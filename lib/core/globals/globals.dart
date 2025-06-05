@@ -106,7 +106,7 @@ class Globals {
     "뉴스", "명언",
   ];
 
-  static int NewsTItleDataLength = 3;
+  static int NewsTItleDataLength = 2;
 
   static List<NewsData> newsMediumImgCardData = [
     NewsData(
