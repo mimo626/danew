@@ -43,7 +43,7 @@ class NewsBigImgCardWidgetState extends ConsumerState<NewsBigImgCardWidget> {
               ),
             ),
             AppSizedBox.h4SizedBox,
-            Text(widget.newsData.title!, style: AppTextStyles.medium14, maxLines: 2,)
+            Text(widget.newsData.title!, style: AppTextStyles.medium16, maxLines: 2,)
           ],
         ),
       ),
