@@ -1,11 +1,7 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:danew/core/globals/globals.dart';
 import 'package:danew/core/theme/colors.dart';
 import 'package:danew/core/theme/sizedbox.dart';
 import 'package:danew/core/widgets/horizontal_list_view_widget.dart';
-import 'package:danew/features/news/data/model/news_model.dart';
-import 'package:danew/features/news/presentation/widgets/news_flash_container_widget.dart';
 import 'package:danew/features/news/presentation/widgets/news_big_img_card_widget.dart';
 import 'package:danew/features/news/presentation/widgets/news_small_img_card_widget.dart';
 import 'package:flutter/material.dart';
@@ -13,14 +9,12 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../../core/globals/news_category.dart';
-import '../../../../core/intl/date_formatter.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/divider_widget.dart';
 import '../../../../core/widgets/list_view_widget.dart';
 import '../providers/newsListProvider.dart';
 import 'news_title_card_widget.dart';
-import 'news_title_widget.dart';
 
 class HomeRecommendView extends ConsumerStatefulWidget {
   final List<String> categoryList;
