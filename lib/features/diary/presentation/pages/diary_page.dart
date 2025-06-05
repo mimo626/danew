@@ -8,6 +8,7 @@ import '../../../../core/theme/colors.dart';
 import '../../../../core/theme/padding.dart';
 import '../../../../core/theme/text_styles.dart';
 import '../../../../core/widgets/app_bar/primary_appbar.dart';
+import '../../../../core/widgets/horizontal_list_view_widget.dart';
 
 class DiaryPage extends ConsumerStatefulWidget {
   const DiaryPage({super.key});
@@ -32,23 +33,13 @@ class DiaryPageState extends ConsumerState<DiaryPage> {
             padding: AppPadding.h20v16Padding,
             child: Text("최근 본 뉴스", style: AppTextStyles.semiBold18,),
           ),
-          Padding(
-            padding: AppPadding.h20Padding,
-            child: Container(
-              height: 100,
-              child: ListView.builder(
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal, // 가로 스크롤
-                itemCount: Globals.newsMediumImgCardData.length,
-                itemBuilder: (context, index) {
-                  final item = Globals.newsMediumImgCardData[index];
-                  return Padding(
-                    padding: AppPadding.right12Padding,
-                    child: NewsMediumImgCardWidget(
-                      newsData: item,
-                    ),
-                  );
-                },
+          HorizontalListViewWidget(
+              list: Globals.newsMediumImgCardData,
+            listLength: Globals.newsMediumImgCardData.length,
+            listWidgetBuilder: (item) => Padding(
+              padding: AppPadding.right12Padding,
+              child: NewsMediumImgCardWidget(
+                newsData: item,
               ),
             ),
           ),
