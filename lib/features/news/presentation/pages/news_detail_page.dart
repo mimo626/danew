@@ -66,7 +66,8 @@ class NewsDetailPageState extends ConsumerState<NewsDetailPage> {
                     child: Text("작성자", style: AppTextStyles.medium14.copyWith(color: AppColors.greyColor)),
                   ),
                   AppSizedBox.w8SizedBox,
-                  Text("${widget.newsData.creator[0]}", style: AppTextStyles.medium14)
+                  Text(widget.newsData.creator.isEmpty ? "" :
+                      widget.newsData.creator[0], style: AppTextStyles.medium14)
                 ],
               ),
               AppSizedBox.h16SizedBox,
